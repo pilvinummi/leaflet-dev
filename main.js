@@ -187,7 +187,6 @@ function init() {
 		      
           },
           onEachFeature: function (feature, layer) {
-            container.innerHTML += feature.properties.nimi + ', ' + feature.properties.pinta_ala;
             popupOptions = {maxWidth: 200};
             layer.bindPopup("<b>Alueen nimi: </b> " + feature.properties.nimi + 
               "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
@@ -201,16 +200,13 @@ function init() {
           layer.on({
             //mousemove: mousemove,
             //mouseout: mouseout, 
-            click: zoomToFeature
+            click: [zoomToFeature, info_to_sidebar]
           });    
                         
         }
       }).addTo(map);
     }
   }); 
-  
-  var container = document.getElementById('information');
-  //container.innerHTML = '';
   
   
   function onEachFeature_viheralueet(feature, layer) {
@@ -228,6 +224,13 @@ function init() {
       mouseout: mouseout, 
       click: addBuffer
     });
+  }
+
+  var container = document.getElementById('information');
+  //container.innerHTML = '';
+
+  function info_to_sidebar(e) {
+  	container.innerHTML += feature.properties.nimi + ', ' + feature.properties.pinta_ala;
   }
 
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
