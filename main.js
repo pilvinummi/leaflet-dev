@@ -229,11 +229,11 @@ function init() {
   var container = document.getElementById('information');
   
   function test(e) {
-  	var feature = e.target;
-  	if (feature) {
+  	//var feature = e.target;
+  	//if (feature) {
   	  container.innerHTML = '';
-  	  container.innerHTML += feature.properties.nimi;
-  	}
+  	  container.innerHTML += paavo_layer.getLayer(properties.nimi);
+  	//}
   }
   
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
