@@ -3,6 +3,7 @@ function init() {
   
   //Laitetaan kaikki muuttujat tahan...
   var container = document.getElementById('information');
+  var removeButton = document.getElementById('remove');
   var filter = null;
   var fillcolor = null;
   
@@ -16,8 +17,6 @@ function init() {
   //WFS-layerit lisataan tasot grouppiin
   var tasot = new L.LayerGroup();
   var kaikki = new L.LayerGroup();
-  
-  var ulkoilu = new L.LayerGroup();
   
   
   //BASEMAP
@@ -68,7 +67,7 @@ function init() {
           filter: function(feature, layer) {return (feature.properties.kayttotarkoitus == filter);},
           onEachFeature: onEachFeature_viheralueet
             
-        })//.addTo(tasot);
+        }).addTo(tasot);
       }
     });
     
@@ -281,7 +280,6 @@ function init() {
     }
   
     //Bufferin poisto-nappia varten tarvitaan sille eventlisteneri
-    var removeButton = document.getElementById('remove');
     removeButton.addEventListener('click',function(event) {
       buffer_layer.clearLayers();
     });
@@ -329,9 +327,9 @@ function init() {
     if (checked) {
       filter = "Ulkoilumetsä"
       fillcolor = "red"
-      testi = update_layer();
-      testi.addTo(ulkoilu);
-      ulkoilu.addTo(map);
+      update_layer();
+      
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
