@@ -226,7 +226,7 @@ function init() {
   
   map.on('click', function(e) {
   	container.innerHTML = '';
-  }
+  });
   
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
   function zoomToFeature(e) {
