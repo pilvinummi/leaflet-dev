@@ -17,6 +17,8 @@ function init() {
   var tasot = new L.LayerGroup();
   var kaikki = new L.LayerGroup();
   
+  var ulkoilu = new L.LayerGroup();
+  
   
   //BASEMAP
   var map = L.map('map', {
@@ -66,7 +68,7 @@ function init() {
           filter: function(feature, layer) {return (feature.properties.kayttotarkoitus == filter);},
           onEachFeature: onEachFeature_viheralueet
             
-        }).addTo(tasot);
+        })//.addTo(tasot);
       }
     });
     
@@ -315,6 +317,8 @@ function init() {
       update_all();
     } else {
       map.removeLayer(kaikki);
+      
+      //buffer_layer.clearLayers();
     }
   });
   
@@ -325,8 +329,9 @@ function init() {
     if (checked) {
       filter = "Ulkoilumetsä"
       fillcolor = "red"
-      update_layer();
-      tasot.addTo(map);
+      testi = update_layer();
+      testi.addTo(ulkoilu);
+      ulkoilu.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
