@@ -232,7 +232,7 @@ function init() {
   	var feature = e.target;
   	if (feature) {
   	  container.innerHTML = '';
-  	  container.innerHTML = feature.properties.nimi	
+  	  container.innerHTML += feature.get('nimi');
   	}
   });
   
