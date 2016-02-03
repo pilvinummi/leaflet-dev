@@ -171,7 +171,7 @@ function init() {
             //Jostain syystä ottaa kaikista kohteista tiedot...
             //container.innerHTML += feature.properties.nimi;
             popupOptions = {maxWidth: 200};
-            layer.bindcontainer("<b>Alueen nimi: </b> " + feature.properties.nimi + //Popup
+            layer.container("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
               "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
               "<br><b>Asukasmäärä: </b> " + feature.properties.he_vakiy +
               "<br><b>Asukastiheys: </b> " + Math.round(feature.properties.he_vakiy / (feature.properties.pinta_ala / 1000000)) + " as/k-m2" +
