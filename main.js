@@ -3,7 +3,19 @@ function init() {
   
   //Laitetaan kaikki muuttujat tahan...
   var container = document.getElementById('information');
-
+  var filter = null;
+  var fillcolor = null;
+  
+  //Kaytetaan valmiiksi ladattua aineistoa -> on huomattavasti nopeampi kuin aina ladata aineisto uudestaan
+  //var viheralueet_wfs = "http://geoserver.hel.fi/geoserver/hkr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=hkr:ylre_viheralue&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson"
+  var all = "https://pesonet1.github.io/Leaflet/all.json"
+  
+   //var paavo_wfs = "http://geoserv.stat.fi:8080/geoserver/postialue/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=postialue:pno_tilasto_2015&filter=%3CPropertyIsEqualTo%3E%3CPropertyName%3Ekunta%3C/PropertyName%3E%3CLiteral%3E091%3C/Literal%3E%3C/PropertyIsEqualTo%3E&maxFeatures=1000&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson";
+  var paavo_wfs = "https://pesonet1.github.io/Leaflet/paavo.json"
+  
+  //WFS-layerit lisataan tasot grouppiin
+  var tasot = new L.LayerGroup();
+  var kaikki = new L.LayerGroup();
   
   
   //BASEMAP
@@ -26,17 +38,7 @@ function init() {
     id: 'mapbox.light'
   }).addTo(map);
 
-  
-  //WFS-layerit lisataan tasot grouppiin
-  var tasot = new L.LayerGroup();
-  var kaikki = new L.LayerGroup();
-	
-  //Kaytetaan valmiiksi ladattua aineistoa -> on huomattavasti nopeampi kuin aina ladata aineisto uudestaan
-  var all = "https://pesonet1.github.io/Leaflet/all.json"
-  
-  var filter = null;
-  var fillcolor = null;
-  
+
   
   //Taman funktion avulla uusi karttataso voidaan kutsua kayttaen haluttua filteria ja tason varia
   function update_layer() {
@@ -137,9 +139,26 @@ function init() {
   }
   
   
-  //var paavo_wfs = "http://geoserv.stat.fi:8080/geoserver/postialue/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=postialue:pno_tilasto_2015&filter=%3CPropertyIsEqualTo%3E%3CPropertyName%3Ekunta%3C/PropertyName%3E%3CLiteral%3E091%3C/Literal%3E%3C/PropertyIsEqualTo%3E&maxFeatures=1000&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson";
-  var paavo_wfs = "https://pesonet1.github.io/Leaflet/paavo.json"
   
+  function onEachFeature_viheralueet(feature, layer) {
+    popupOptions = {maxWidth: 200};
+    layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
+      "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
+      "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
+      "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
+      "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
+      ,popupOptions);
+      
+    //Mahdollistaa kohteen korostuksen ja kohdetta klikkaamalla siihen kohdistuksen  
+    layer.on({
+      mousemove: mousemove,
+      mouseout: mouseout, 
+      click: addBuffer
+    });
+  }
+
+
+
   //Paavo WFS
   var paavo_layer = $.ajax({ 
     url: paavo_wfs,
@@ -153,7 +172,6 @@ function init() {
           ala = feature.properties.pinta_ala / 1000000,
           astiheys = vaki / ala;
                       
-          //if ( vaki > 22000) fillColor =
           if ( astiheys > 12000) fillColor = "#a63603";
           else if ( astiheys > 10000) fillColor = "#d94801";
           else if ( astiheys > 8000 ) fillColor = "#f16913";
@@ -173,7 +191,7 @@ function init() {
 		      
           },
           onEachFeature: function (feature, layer) {
-            //Jostain syystä ottaa kaikista kohteista tiedot...
+            
             layer.on('click', function() {
               container.innerHTML = '';
               container.innerHTML = ("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
@@ -183,24 +201,15 @@ function init() {
               "<br><b>Asuntojen määrä: </b> " + feature.properties.ra_asunn +
               "<br><b>Asumisväljyys: </b> " + feature.properties.te_as_valj);
             });
+            
             /*
             layer.setStyle({
             	
             });
-            */
-            /*popupOptions = {maxWidth: 200};
-            layer.bindPopup("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
-              "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
-              "<br><b>Asukasmäärä: </b> " + feature.properties.he_vakiy +
-              "<br><b>Asukastiheys: </b> " + Math.round(feature.properties.he_vakiy / (feature.properties.pinta_ala / 1000000)) + " as/k-m2" +
-              "<br><b>Asuntojen määrä: </b> " + feature.properties.ra_asunn +
-              "<br><b>Asumisväljyys: </b> " + feature.properties.te_as_valj
-              ,popupOptions);*/
+	    */
         
-          //Mahdollistaa kohteen korostuksen ja kohdetta klikkaamalla siihen kohdistuksen  
+          //Mahdollistaa kohdetta klikkaamalla siihen kohdistuksen  
           layer.on({
-            //mousemove: mousemove,
-            //mouseout: mouseout, 
             click: zoomToFeature
           });    
                         
@@ -210,24 +219,9 @@ function init() {
   }); 
   
   
-  function onEachFeature_viheralueet(feature, layer) {
-    popupOptions = {maxWidth: 200};
-    layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
-      "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
-      "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
-      "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
-      "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
-      ,popupOptions);
-      
-    //Mahdollistaa kohteen korostuksen ja kohdetta klikkaamalla siihen kohdistuksen  
-    layer.on({
-      mousemove: mousemove,
-      mouseout: mouseout, 
-      click: addBuffer
-    });
-  }
   
   
+  //Tyhjentaa containerin, kun klikataan muutakuin kuin kohdetta
   map.on('click', function(e) {
   	container.innerHTML = '';
   });
@@ -261,7 +255,6 @@ function init() {
       //opacity: 1,
       fillOpacity: 0.8
     });
-    //viheralueet.resetStyle(e.target);
   }
 
   //Funktio bufferin luonnista, joka luodaan viheralueetta klikatessa
@@ -358,15 +351,19 @@ function init() {
       fillcolor = "#666699"
       filter = "Kesämaja-alue" 
       update_layer();
-      tasot.addTo(map);
+     
+      fillcolor = "#666699"
       filter = "Siirtolapuutarha"
       update_layer();
-      tasot.addTo(map);
+   
+      fillcolor = "#666699"
       filter = "Viljelypalsta"
       update_layer();
-      tasot.addTo(map);
+     
+      fillcolor = "#666699"
       filter = "Viljelypalsta-alue"
       update_layer();
+    
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
