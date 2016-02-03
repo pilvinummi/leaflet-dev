@@ -1,7 +1,5 @@
 
-function init() {
-  
-  //Laitetaan kaikki muuttujat tahan...
+//Laitetaan kaikki muuttujat tahan...
   var container = document.getElementById('information');
   var removeButton = document.getElementById('remove');
   var filter = null;
@@ -19,8 +17,11 @@ function init() {
   var kaikki = new L.LayerGroup();
   
   
+
+function init() {
+  
   //BASEMAP
-  map = L.map('map', {
+  var map = L.map('map', {
     center: new L.LatLng(60.1708, 24.9375),
     zoom: 12,
     minZoom: 11,
