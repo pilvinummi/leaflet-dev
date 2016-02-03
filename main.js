@@ -215,7 +215,7 @@ function init() {
 
   function onMapClick(e) {
     container.innerHTML = '';
-    container.innerHTML = e.properties.pinta_ala;
+    container.innerHTML = paavo_layer.properties.pinta_ala;
     alert('testi');
   }
   
