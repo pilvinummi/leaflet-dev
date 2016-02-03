@@ -16,6 +16,7 @@ function init() {
   //WFS-layerit lisataan tasot grouppiin
   var tasot = new L.LayerGroup();
   var kaikki = new L.LayerGroup();
+  var testi = new L.LayerGroup();
   
   
   //BASEMAP
@@ -66,7 +67,7 @@ function init() {
           filter: function(feature, layer) {return (feature.properties.kayttotarkoitus == filter);},
           onEachFeature: onEachFeature_viheralueet
             
-        })//.addTo(tasot);
+        }).addTo(tasot);
       }
     });
     
@@ -350,7 +351,8 @@ function init() {
       //Ei lisaa kartalle muita kuin Kesamaja-alueet... :/
       fillcolor = "#666699"
       filter = "Kesämaja-alue" 
-      update_layer();
+      var uus = update_layer();
+      uus.addTo(testi);
      
       fillcolor = "#666699"
       filter = "Siirtolapuutarha"
@@ -364,7 +366,7 @@ function init() {
       filter = "Viljelypalsta-alue"
       update_layer();
     
-      tasot.addTo(map);
+      testi.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
