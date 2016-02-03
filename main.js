@@ -168,6 +168,7 @@ function init() {
 		      
           },
           onEachFeature: function (feature, layer) {
+            //Jostain syystä ottaa kaikista kohteista tiedot...
             container.innerHTML += feature.properties.nimi;
             popupOptions = {maxWidth: 200};
             layer.bindPopup("<b>Alueen nimi: </b> " + feature.properties.nimi + 
@@ -217,6 +218,18 @@ function init() {
     container.innerHTML += e.properties.nimi;
   }
   */
+  
+  map.on('click', function(evt) {
+  var feature = map.forEachFeatureAtPixel(evt.pixel,
+      function(feature, layer) {
+        return feature;
+      });
+	var props = feature.getProperties();
+	
+	container.innerHTML = props.pinta_ala;
+
+  });
+  
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
   function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
