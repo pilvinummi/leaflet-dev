@@ -187,7 +187,6 @@ function init() {
 		      
           },
           onEachFeature: function (feature, layer) {
-            container.innerHTML = feature.properties.nimi
             popupOptions = {maxWidth: 200};
             layer.bindPopup("<b>Alueen nimi: </b> " + feature.properties.nimi + 
               "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
@@ -228,13 +227,15 @@ function init() {
   }
 
   var container = document.getElementById('information');
-  //container.innerHTML = '';
-  /*
-  function info_to_sidebar(e) {
+  
+  map.on('click', function(e) {
   	var feature = e.target;
-  	container.innerHTML = feature.properties.nimi
-  }
-  */
+  	if (feature) {
+  	  container.innerHTML = '';
+  	  container.innerHTML = feature.properties.nimi	
+  	}
+  });
+  
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
   function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
