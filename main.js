@@ -229,13 +229,11 @@ function init() {
   var container = document.getElementById('information');
   
   function test(e) {
-  map.on('click', function(e) {
   	var feature = e.target;
   	if (feature) {
   	  container.innerHTML = '';
-  	  container.innerHTML += properties.nimi;
+  	  container.innerHTML += feature.properties.nimi;
   	}
-  });
   }
   
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
