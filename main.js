@@ -1,26 +1,25 @@
 
-//Laitetaan kaikki muuttujat tahan...
+function init() {
+  
+  //Laitetaan kaikki muuttujat tahan...
   var container = document.getElementById('information');
   var removeButton = document.getElementById('remove');
-  var filter = null;
-  var fillcolor = null;
   
   //Kaytetaan valmiiksi ladattua aineistoa -> on huomattavasti nopeampi kuin aina ladata aineisto uudestaan
   //var viheralueet_wfs = "http://geoserver.hel.fi/geoserver/hkr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=hkr:ylre_viheralue&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson"
+  //var paavo_wfs = "http://geoserv.stat.fi:8080/geoserver/postialue/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=postialue:pno_tilasto_2015&filter=%3CPropertyIsEqualTo%3E%3CPropertyName%3Ekunta%3C/PropertyName%3E%3CLiteral%3E091%3C/Literal%3E%3C/PropertyIsEqualTo%3E&maxFeatures=1000&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson";
   var all = "https://pesonet1.github.io/Leaflet/all.json"
-  
-   //var paavo_wfs = "http://geoserv.stat.fi:8080/geoserver/postialue/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=postialue:pno_tilasto_2015&filter=%3CPropertyIsEqualTo%3E%3CPropertyName%3Ekunta%3C/PropertyName%3E%3CLiteral%3E091%3C/Literal%3E%3C/PropertyIsEqualTo%3E&maxFeatures=1000&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson";
   var paavo_wfs = "https://pesonet1.github.io/Leaflet/paavo.json"
   
-  //WFS-layerit lisataan tasot grouppiin
+  //Geojson-objektit lisataan tasot grouppiin
   var tasot = new L.LayerGroup();
   var kaikki = new L.LayerGroup();
   
+  //Muuttujat filterointiin
+  var filter = null;
+  var fillcolor = null;
   
-
-function init() {
-  
-  //BASEMAP
+ 
   var map = L.map('map', {
     center: new L.LatLng(60.1708, 24.9375),
     zoom: 12,
@@ -31,12 +30,9 @@ function init() {
   //Scale
   L.control.scale().addTo(map);
   
-  
+  //MapBox-light taustakartta
   basemap = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicGVzb25ldDEiLCJhIjoiY2lqNXJua2k5MDAwaDI3bTNmaGZqc2ZuaSJ9.nmLkOlsQKzwMir9DfmCNPg', {
     maxZoom: 18,
-    /*attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-      'Imagery © <a href="http://mapbox.com">Mapbox</a>',*/
     id: 'mapbox.light'
   }).addTo(map);
 
@@ -71,12 +67,11 @@ function init() {
         }).addTo(tasot);
       }
     });
-    
     //tasot.addTo(map);
   }
  
-  //var viheralueet_wfs = "http://geoserver.hel.fi/geoserver/hkr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=hkr:ylre_viheralue&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson"
-  //Oma funktio kaikkien viheralueiden hankkimiselle, myös varit ovat maaritelty
+  
+  //Oma funktio kaikkien viheralueiden hankkimiselle, myös varit ovat ennalta maaritelty
   function update_all() {
     var viheralueet = $.ajax({ 
       url: all,
@@ -141,7 +136,7 @@ function init() {
   }
   
   
-  
+  //Taman tarkoituksena on mahdollistaa popupin ja muiden funktioiden toimimisen viheralueet-tasoilla
   function onEachFeature_viheralueet(feature, layer) {
     popupOptions = {maxWidth: 200};
     layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
@@ -151,17 +146,16 @@ function init() {
       "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
       ,popupOptions);
       
-    //Mahdollistaa kohteen korostuksen ja kohdetta klikkaamalla siihen kohdistuksen  
     layer.on({
       mousemove: mousemove,
       mouseout: mouseout, 
-      click: addBuffer
+      click: addBuffer //Popupia ei pitaisi muodostua, kun bufferin valinta on paalla
     });
   }
 
 
 
-  //Paavo WFS
+  //Paavo-aineisto
   var paavo_layer = $.ajax({ 
     url: paavo_wfs,
     datatype:"json",
@@ -210,33 +204,31 @@ function init() {
             });
 	    */
         
-          //Mahdollistaa kohdetta klikkaamalla siihen kohdistuksen  
           layer.on({
             click: zoomToFeature
           });    
-                        
+                      
         }
       }).addTo(map);
     }
   }); 
   
   
-  
-  
-  //Tyhjentaa containerin, kun klikataan muutakuin kuin kohdetta
+  //Tyhjentaa containerin, kun klikataan muuta kuin kuin kohdetta
   map.on('click', function(e) {
   	container.innerHTML = '';
   });
+  
   
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
   function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
   }
 
+
   function mousemove(e) {
     var layer = e.target;
 	
-    //Korostaa kohteen, jonka paalla hiiri on 
     layer.setStyle({
       weight: 3,
       opacity: 0.3,
@@ -248,6 +240,7 @@ function init() {
     }
   }
 
+
   function mouseout(e) {
     var layer = e.target;
     
@@ -258,6 +251,7 @@ function init() {
       fillOpacity: 0.8
     });
   }
+
 
   //Funktio bufferin luonnista, joka luodaan viheralueetta klikatessa
   var radius = null;
@@ -288,7 +282,7 @@ function init() {
 	
 	
 	
-  //Bufferikoon eventlistenerit
+  //Bufferikoon 150m eventlisteneri
   box_150.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
@@ -297,7 +291,8 @@ function init() {
       radius = null
     }
   });
-	
+ 
+  //Bufferikoon 300m eventlisteneri
   box_300.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
@@ -309,7 +304,7 @@ function init() {
 
 
 
-  //Layereiden eventlistenerit
+  //Kaikkien viheralueiden eventlistener
   karttataso.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
@@ -322,7 +317,7 @@ function init() {
   });
   
   
-	
+  //Loput eventlistenerit eri tasoille
   ulkoilumetsa.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
