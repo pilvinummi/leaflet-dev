@@ -230,6 +230,7 @@ function init() {
   //container.innerHTML = '';
 
   function info_to_sidebar(e) {
+  	var feature = e.target;
   	container.innerHTML += feature.properties.nimi + ', ' + feature.properties.pinta_ala;
   }
 
