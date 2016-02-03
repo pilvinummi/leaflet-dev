@@ -200,7 +200,7 @@ function init() {
           layer.on({
             //mousemove: mousemove,
             //mouseout: mouseout, 
-            click: [zoomToFeature, info_to_sidebar]
+            click: info_to_sidebar //zoomToFeature
           });    
                         
         }
