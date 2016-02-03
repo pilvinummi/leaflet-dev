@@ -209,11 +209,13 @@ function init() {
     });
   }
 
+
+
   var container = document.getElementById('information');
 
   function onMapClick(e) {
     container.innerHTML = '';
-    container.innerHTML = props.pinta_ala;
+    container.innerHTML = e.properties.pinta_ala;
     alert('testi');
   }
   
