@@ -141,7 +141,7 @@ function init() {
   function onEachFeature_viheralueet(feature, layer) {
     
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
-    if (radius != null) {
+    if (radius == null) {
       popupOptions = {maxWidth: 200};
       layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
         "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
