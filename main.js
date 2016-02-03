@@ -139,7 +139,7 @@ function init() {
   
   //Taman tarkoituksena on mahdollistaa popupin ja muiden funktioiden toimimisen viheralueet-tasoilla
   function onEachFeature_viheralueet(feature, layer) {
-    
+    radius = null;
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
     if (radius == null) {
       popupOptions = {maxWidth: 200};
@@ -149,9 +149,7 @@ function init() {
         "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
         "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
         ,popupOptions);
-    } else {
-    	radius = null;
-    }
+    } 
     
     layer.on({
       mousemove: mousemove,
