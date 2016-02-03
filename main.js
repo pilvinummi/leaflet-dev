@@ -210,25 +210,16 @@ function init() {
   }
 
   var container = document.getElementById('information');
-  /*
-  function test(e) {
-    var layer = e.target;
-    //layer = paavo_layer.getLayer(feature);
-    container.innerHTML = '';
-    container.innerHTML += e.properties.nimi;
-  }
-  */
-  
-  map.on('click', function(evt) {
-  var feature = map.forEachFeatureAtPixel(evt.pixel,
-      function(feature, layer) {
-        return feature;
-      });
-	var props = feature.getProperties();
-	
-	container.innerHTML = props.pinta_ala;
 
+  function onMapClick(e) {
+    container.innerHTML = '';
+    container.innerHTML = props.pinta_ala;
+    alert('testi');
   });
+  
+  map.on('click', onMapClick);
+  
+  
   
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
   function zoomToFeature(e) {
