@@ -183,7 +183,11 @@ function init() {
               "<br><b>Asuntojen määrä: </b> " + feature.properties.ra_asunn +
               "<br><b>Asumisväljyys: </b> " + feature.properties.te_as_valj);
             });
-            
+            /*
+            layer.setStyle({
+            	
+            });
+            */
             /*popupOptions = {maxWidth: 200};
             layer.bindPopup("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
               "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
