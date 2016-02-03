@@ -43,45 +43,49 @@
     	
     	<h1>Helsingin vihertiheys</h1>
     	<p>Helsingin viherverkosto perustuu <a href="http://www.yleiskaava.fi/2013/miten-rakentaminen-ja-virkistysalueet-sovitetaan-yhteen/" target="_blank">laajoihin viheralueisiin eli vihersormiin</a>. Kaupungin pinta-alasta 40 % on viher- tai virkistysaluetta ja metsän osuus on noin 20 %. Kaupunkirakenteen tiivistyessä osa täydennysrakentamisen paineesta kohdistuu viheralueille.</p>
-	    <p>Saavutettavuus on yksi viher- ja virkistysalueiden laadun mittari. Lähipuistojen hyvänä kävelyetäisyytenä voidaan pitää 150 metriä ja laajempien kaupunginosapuistojen tai puistometsien 300 metriä. Tämän kartan avulla voit arvioida Helsingin viheralueiden saavutettavuutta ja sijaintia suhteessa asukastiheyteen.</p>
+	<p>Saavutettavuus on yksi viher- ja virkistysalueiden laadun mittari. Lähipuistojen hyvänä kävelyetäisyytenä voidaan pitää 150 metriä ja laajempien kaupunginosapuistojen tai puistometsien 300 metriä. Tämän kartan avulla voit arvioida Helsingin viheralueiden saavutettavuutta ja sijaintia suhteessa asukastiheyteen.</p>
+    	
+    	<br>
+    	
+    	<!-- Valitun kohteen tiedot -->
+	<div class="information" id="information">
+	<em>Paavo-tason tiedot</em>
+	</div>
+    	
+    	<br>
+    	
     	<h2>Näytä kartalla:</h2>
     	
-    	<p>
+    	<br>
     	
- 	    <label><input type="checkbox" id="karttataso" value="12" name="layers[]"/> Kaikki viheralueet</label><br/>
+ 	<label><input type="checkbox" id="karttataso" value="12" name="layers[]"/> Kaikki viheralueet</label><br/>
  	
- 	    <p>
+ 	<br>
 
     	<label><input type="checkbox" id="ulkoilumetsa" value="1" name="layers[]"/> Ulkoilumetsät</label><br/>
-	    <label><input type="checkbox" id="kartano" value="2" name="layers[]"/> Kartano- ja huvila-alueet</label><br/>
-	    <label><input type="checkbox" id="siirtola" value="3" name="layers[]"/> Siirtolapuutarhat, viljelypalsta-alueet ja kesämaja-alueet</label><br/>
-	    <label><input type="checkbox" id="koira" value="4" name="layers[]"/> Koira-aitaukset</label><br/>
-	    <label><input type="checkbox" id="leikki" value="5" name="layers[]"/> Leikkipaikat ja -alueet</label><br/>
-	    <label><input type="checkbox" id="luonto" value="6" name="layers[]"/> Luonnonsuojelualueet</label><br/>
-	    <label><input type="checkbox" id="uima" value="7" name="layers[]"/> Uimarannat ja venesatamat</label><br/>
-	    <label><input type="checkbox" id="hauta" value="8" name="layers[]"/> Hautausmaat</label><br/>
+	<label><input type="checkbox" id="kartano" value="2" name="layers[]"/> Kartano- ja huvila-alueet</label><br/>
+	<label><input type="checkbox" id="siirtola" value="3" name="layers[]"/> Siirtolapuutarhat, viljelypalsta-alueet ja kesämaja-alueet</label><br/>
+	<label><input type="checkbox" id="koira" value="4" name="layers[]"/> Koira-aitaukset</label><br/>
+	<label><input type="checkbox" id="leikki" value="5" name="layers[]"/> Leikkipaikat ja -alueet</label><br/>
+	<label><input type="checkbox" id="luonto" value="6" name="layers[]"/> Luonnonsuojelualueet</label><br/>
+	<label><input type="checkbox" id="uima" value="7" name="layers[]"/> Uimarannat ja venesatamat</label><br/>
+	<label><input type="checkbox" id="hauta" value="8" name="layers[]"/> Hautausmaat</label><br/>
     	<label><input type="checkbox" id="muut_asema" value="9" name="layers[]"/> Muut asemakaavoitetut viheralueet</label><br/>	
-	    <label><input type="checkbox" id="yleiskaava" value="10" name="layers[]"/> Yleiskaavan viheralueet</label><br/>
-	    <label><input type="checkbox" id="muut" value="11" name="layers[]"/> Muut viheralueet</label><br/>
+	<label><input type="checkbox" id="yleiskaava" value="10" name="layers[]"/> Yleiskaavan viheralueet</label><br/>
+	<label><input type="checkbox" id="muut" value="11" name="layers[]"/> Muut viheralueet</label><br/>
 
-    	<p>
+    	<br>
  
     	<label><input type="checkbox" id="box_150" value="1" name="fooby[1][]"/> 150m bufferi</label>
-	    <label><input type="checkbox" id="box_300" value="1" name="fooby[1][]"/> 300m bufferi</label>
+	<label><input type="checkbox" id="box_300" value="1" name="fooby[1][]"/> 300m bufferi</label>
     	<button id="remove" class="btn btn-primary">Poista bufferit</button>
     	
     	<h2>Kartta-aineistot:</h2>
-	    <p>
-	      <a href="http://www.hri.fi/fi/dataset/helsingin-kaupungin-yleisten-alueiden-rekisteri" target="_blank">Helsingin kaupungin yleisten alueiden rekisteri</a><br/>
-	      <a href="http://www.tilastokeskus.fi/tup/rajapintapalvelut/paavo.html" target="_blank">Tilastokeskuksen Paavo-rajapinta</a>
-	    </p>
+	<p>
+	  <a href="http://www.hri.fi/fi/dataset/helsingin-kaupungin-yleisten-alueiden-rekisteri" target="_blank">Helsingin kaupungin yleisten alueiden rekisteri</a><br/>
+	  <a href="http://www.tilastokeskus.fi/tup/rajapintapalvelut/paavo.html" target="_blank">Tilastokeskuksen Paavo-rajapinta</a>
+	</p>
 	
-	   <!-- Valitun kohteen tiedot -->
-	   <div class="information" id="information">
-	     <em>Paavo-tason tiedot</em>
-	   </div>
-	
-  
       </div>
     </div>
     
