@@ -169,15 +169,15 @@ function init() {
           },
           onEachFeature: function (feature, layer) {
             //Jostain syystä ottaa kaikista kohteista tiedot...
-            //container.innerHTML += feature.properties.nimi;
-            popupOptions = {maxWidth: 200};
-            layer.container("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
+            container.innerHTML += feature.properties.nimi;
+            /*popupOptions = {maxWidth: 200};
+            layer.bindPopup("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
               "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
               "<br><b>Asukasmäärä: </b> " + feature.properties.he_vakiy +
               "<br><b>Asukastiheys: </b> " + Math.round(feature.properties.he_vakiy / (feature.properties.pinta_ala / 1000000)) + " as/k-m2" +
               "<br><b>Asuntojen määrä: </b> " + feature.properties.ra_asunn +
-              "<br><b>Asumisväljyys: </b> " + feature.properties.te_as_valj);
-              //,popupOptions);
+              "<br><b>Asumisväljyys: </b> " + feature.properties.te_as_valj
+              ,popupOptions);*/
         
           //Mahdollistaa kohteen korostuksen ja kohdetta klikkaamalla siihen kohdistuksen  
           layer.on({
