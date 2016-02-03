@@ -233,7 +233,7 @@ function init() {
   	//if (feature) {
   	  layer = paavo_layer.getLayer(feature);
   	  container.innerHTML = '';
-  	  container.innerHTML += layer.feature.nimi);
+  	  container.innerHTML += layer.feature.nimi;
   	//}
   }
   
