@@ -389,8 +389,13 @@ function init() {
     var checked = this.checked;
     if (checked) {
       //Lisaa kartalle vain leikkipaikat...
-      filter = "Leikkipaikka" || kaytto == "Leikkipuisto"
       fillcolor = "#666699"
+      filter = "Leikkipaikka"
+      update_layer();
+      tasot.addTo(map);
+      
+      fillcolor = "#666699"
+      filter = "Leikkipuisto"
       update_layer();
       tasot.addTo(map);
     } else {
