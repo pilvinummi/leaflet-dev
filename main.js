@@ -229,10 +229,11 @@ function init() {
   var container = document.getElementById('information');
   
   function test(e) {
-  	//var feature = e.target;
+  	var feature = e.target;
   	//if (feature) {
+  	  layer = paavo_layer.getLayer(feature);
   	  container.innerHTML = '';
-  	  container.innerHTML += paavo_layer.getLayer(properties.nimi);
+  	  container.innerHTML += layer.feature.nimi);
   	//}
   }
   
