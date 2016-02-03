@@ -1,6 +1,11 @@
 
 function init() {
-    	
+  
+  //Laitetaan kaikki muuttujat tahan...
+  var container = document.getElementById('information');
+
+  
+  
   //BASEMAP
   var map = L.map('map', {
     center: new L.LatLng(60.1708, 24.9375),
@@ -170,7 +175,13 @@ function init() {
           onEachFeature: function (feature, layer) {
             //Jostain syystä ottaa kaikista kohteista tiedot...
             layer.on('click', function() {
-            	container.innerHTML += feature.properties.nimi;
+              container.innerHTML = '';
+              container.innerHTML = ("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
+              "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
+              "<br><b>Asukasmäärä: </b> " + feature.properties.he_vakiy +
+              "<br><b>Asukastiheys: </b> " + Math.round(feature.properties.he_vakiy / (feature.properties.pinta_ala / 1000000)) + " as/k-m2" +
+              "<br><b>Asuntojen määrä: </b> " + feature.properties.ra_asunn +
+              "<br><b>Asumisväljyys: </b> " + feature.properties.te_as_valj);
             });
             
             /*popupOptions = {maxWidth: 200};
@@ -211,11 +222,6 @@ function init() {
       click: addBuffer
     });
   }
-
-
-
-  var container = document.getElementById('information');
-
   
   
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
