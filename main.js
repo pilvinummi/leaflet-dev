@@ -150,7 +150,7 @@ function init() {
         "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
         ,popupOptions);
     } else {
-    	return
+    	radius = null;
     }
     
     layer.on({
