@@ -200,7 +200,7 @@ function init() {
           layer.on({
             //mousemove: mousemove,
             //mouseout: mouseout, 
-            click: info_to_sidebar //zoomToFeature
+            click: zoomToFeature
           });    
                         
         }
@@ -210,6 +210,7 @@ function init() {
   
   
   function onEachFeature_viheralueet(feature, layer) {
+    container.innerHTML = feature.properties.nimi
     popupOptions = {maxWidth: 200};
     layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
       "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
@@ -228,12 +229,12 @@ function init() {
 
   var container = document.getElementById('information');
   //container.innerHTML = '';
-
+  /*
   function info_to_sidebar(e) {
   	var feature = e.target;
-  	container.innerHTML += feature.properties.nimi + ', ' + feature.properties.pinta_ala;
+  	container.innerHTML = feature.properties.nimi
   }
-
+  */
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
   function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
