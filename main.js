@@ -200,7 +200,7 @@ function init() {
           layer.on({
             //mousemove: mousemove,
             //mouseout: mouseout, 
-            click: zoomToFeature
+            click: test //zoomToFeature
           });    
                         
         }
@@ -228,6 +228,7 @@ function init() {
 
   var container = document.getElementById('information');
   
+  function test(e) {
   map.on('click', function(e) {
   	var feature = e.target;
   	if (feature) {
@@ -235,7 +236,7 @@ function init() {
   	  container.innerHTML += properties.nimi;
   	}
   });
-
+  }
   
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
   function zoomToFeature(e) {
