@@ -18,6 +18,7 @@ function init() {
   //Muuttujat filterointiin
   var filter = null;
   var fillcolor = null;
+  var radius = null;
   
  
   var map = L.map('map', {
@@ -138,14 +139,17 @@ function init() {
   
   //Taman tarkoituksena on mahdollistaa popupin ja muiden funktioiden toimimisen viheralueet-tasoilla
   function onEachFeature_viheralueet(feature, layer) {
-    popupOptions = {maxWidth: 200};
-    layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
-      "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
-      "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
-      "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
-      "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
-      ,popupOptions);
-      
+  	
+    if (radius == null) {
+      popupOptions = {maxWidth: 200};
+      layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
+        "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
+        "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
+        "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
+        "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
+        ,popupOptions);
+    }
+    
     layer.on({
       mousemove: mousemove,
       mouseout: mouseout, 
@@ -254,7 +258,6 @@ function init() {
 
 
   //Funktio bufferin luonnista, joka luodaan viheralueetta klikatessa
-  var radius = null;
   function addBuffer(e) {
 		
     if (radius != null) {
