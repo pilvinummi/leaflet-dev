@@ -169,7 +169,7 @@ function init() {
           },
           onEachFeature: function (feature, layer) {
             //Jostain syystä ottaa kaikista kohteista tiedot...
-            container.innerHTML = layer.properties.nimi;
+            container.innerHTML = feature.properties.nimi;
             /*popupOptions = {maxWidth: 200};
             layer.bindPopup("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
               "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
