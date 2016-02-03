@@ -215,7 +215,7 @@ function init() {
     container.innerHTML = '';
     container.innerHTML = props.pinta_ala;
     alert('testi');
-  });
+  }
   
   map.on('click', onMapClick);
   
