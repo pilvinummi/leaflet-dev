@@ -187,6 +187,7 @@ function init() {
 		      
           },
           onEachFeature: function (feature, layer) {
+            container.innerHTML = feature.properties.nimi
             popupOptions = {maxWidth: 200};
             layer.bindPopup("<b>Alueen nimi: </b> " + feature.properties.nimi + 
               "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
@@ -210,7 +211,6 @@ function init() {
   
   
   function onEachFeature_viheralueet(feature, layer) {
-    container.innerHTML = feature.properties.nimi
     popupOptions = {maxWidth: 200};
     layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
       "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
