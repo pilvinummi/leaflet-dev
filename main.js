@@ -348,15 +348,10 @@ function init() {
   });
   
   
-  function UnCheckAll(chk) {
-    for (i = 0; i < chk.length; i++)
-      chk[i].checked = false ;
-  }
   
   resetButton.addEventListener('click',function(event) {
       tasot.clearLayers();
       //Nollataan checkboxit
-      UnCheckAll();
     });
   
   
