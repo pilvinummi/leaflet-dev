@@ -146,7 +146,7 @@ function init() {
 
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia (jos laittaa !=, niin silloin
     //popupia ei saa luotua missaan tilanteessa
-    if (radius == null) {
+    if (radius == (150 * 0.000621371192) || radius == (300 * 0.000621371192)) {
       popupOptions = {maxWidth: 200};
       layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
         "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
