@@ -6,6 +6,8 @@ function init() {
   var container = document.getElementById('information');
   var removeButton = document.getElementById('remove');
   
+  var legend = L.control({position: 'bottomleft'});
+  
   //Kaytetaan valmiiksi ladattua aineistoa -> on huomattavasti nopeampi kuin aina ladata aineisto uudestaan
   //var viheralueet_wfs = "http://geoserver.hel.fi/geoserver/hkr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=hkr:ylre_viheralue&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson"
   //var paavo_wfs = "http://geoserv.stat.fi:8080/geoserver/postialue/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=postialue:pno_tilasto_2015&filter=%3CPropertyIsEqualTo%3E%3CPropertyName%3Ekunta%3C/PropertyName%3E%3CLiteral%3E091%3C/Literal%3E%3C/PropertyIsEqualTo%3E&maxFeatures=1000&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson";
@@ -35,6 +37,7 @@ function init() {
   	updateWhenIdle: true,
   	maxWidth: 200
   }).addTo(map);
+  
   
   //MapBox-light taustakartta
   basemap = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicGVzb25ldDEiLCJhIjoiY2lqNXJua2k5MDAwaDI3bTNmaGZqc2ZuaSJ9.nmLkOlsQKzwMir9DfmCNPg', {
@@ -327,9 +330,9 @@ function init() {
     if (checked) {
       update_all();
     } else {
-      map.removeLayer(kaikki);
+      //map.removeLayer(kaikki);
       
-      //buffer_layer.clearLayers();
+      kaikki.clearLayers();
     }
   });
   
@@ -491,22 +494,6 @@ function init() {
     }
   });
   
-  /*
-  //Tama scripti hoitaa sen, etta yksi laatikoista voi vain olla kerrallaan valittuna
-  $("input:checkbox").on('click', function() {
-    var $box = $(this);
-    if ($box.is(":checked")) {
-      var group = "input:checkbox[name='" + $box.attr("name") + "']";
-      $(group).prop("checked", false);
-      $box.prop("checked", true);
-    } else {
-      $box.prop("checked", false);
-    }
-  });
-  */
-
-
-
 
 
   function getColor(d) {
@@ -520,9 +507,6 @@ function init() {
 	   d > 0      ? "#fff5eb" :
 	                "#ffffff";
   }
-
-
-  var legend = L.control({position: 'bottomleft'});
 
   legend.onAdd = function (map) {
 
@@ -539,9 +523,7 @@ function init() {
 
     return div;
   };
-
+  
   legend.addTo(map);
-
-
 	
 }
