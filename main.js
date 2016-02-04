@@ -386,7 +386,7 @@ function init() {
       filter = "Viljelypalsta-alue"
       update_layer();
     
-      map.addLayer(tasot);
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
