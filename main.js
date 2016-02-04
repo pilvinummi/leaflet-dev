@@ -362,11 +362,11 @@ function init() {
   ulkoilumetsa.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      var taso = ulkoilumetsa
+      var taso = ulkoilumetsat
       filter = "Ulkoilumetsä"
-      fillcolor = "red"
+      fillcolor = "#336666"
       update_layer();
-      ulkoilumetsa.addTo(map);
+      ulkoilumetsat.addTo(map);
     } else {
       map.removeLayer(ulkoilumetsa);
     }
