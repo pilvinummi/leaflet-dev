@@ -5,6 +5,7 @@ function init() {
   document.getElementById("none").checked = true;
   var container = document.getElementById('information');
   var removeButton = document.getElementById('remove');
+  var resetButton = document.getElementById('reset');
   
   var legend = L.control({position: 'bottomleft'});
   
@@ -344,10 +345,13 @@ function init() {
       update_all();
     } else {
       map.removeLayer(kaikki);
-      
-      //kaikki.clearLayers();
     }
   });
+  
+  resetButton.addEventListener('click',function(event) {
+      tasot.clearLayers();
+    });
+  
   
   
   //Loput eventlistenerit eri tasoille
