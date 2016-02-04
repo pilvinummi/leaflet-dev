@@ -60,8 +60,8 @@ function init() {
             var fillColor, 
             kaytto = feature.properties.kayttotarkoitus;
             
-            if ( kaytto.indexOf(filter) > -1 ) fillColor = fillcolor;
-            
+            if ( kaytto.indexOf(filter) >= 0 ) fillColor = fillcolor;
+          
             return {
       	      color: "black", 
       	      weight: 1, 
@@ -104,8 +104,6 @@ function init() {
             else if ( kaytto == "Uimaranta-alue" || kaytto == "Venesatama / Venevalkama" ) fillColor = "#336699";
             else if ( kaytto.indexOf("Haudat") > -1 ) fillColor = "#666666";
             else if ( kaytto == "Muut viheralueet" ) fillColor = "#fff";
-      
-            //else if ( kaytto == "Yleiskaavan viheralue" ) fillColor = "#ff0000";
             else fillColor = "#999";  // no data
 		      
           //Muu toimiluokka
