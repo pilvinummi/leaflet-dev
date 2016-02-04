@@ -60,7 +60,7 @@ function init() {
             var fillColor, 
             kaytto = feature.properties.kayttotarkoitus;
             
-            if ( kaytto.indexOf(filter) >= 0 ) fillColor = fillcolor;
+            if ( kaytto.indexOf(filter) > -1 ) fillColor = fillcolor;
           
             return {
       	      color: "black", 
@@ -508,11 +508,10 @@ function init() {
     }
   });
  
-  //taytyy selvittaaa...
   hauta.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      filter = "Haudat" //kaytto.indexOf("Haudat") > -1
+      filter = "Haudat"
       fillcolor = "#666666"
       update_layer();
       tasot.addTo(map);
@@ -521,11 +520,10 @@ function init() {
     }
   });
   
-  //taytyy selvittaaa...
   muut_asema.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      filter = "Asemakaavoitettu" //kaytto.indexOf("semakaavoitettu") > -1
+      filter = "semakaavoitettu"
       fillcolor = "#336666"
       update_layer();
       tasot.addTo(map);
