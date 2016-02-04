@@ -59,9 +59,10 @@ html, body {
       
       .ScrollStyle
       {
+      	left: 0px;
       	float: left;
 	max-height: 250px;
-	overflow-y: scroll;
+	overflow-y: auto; /*scroll*/
       }
       
       .info {
