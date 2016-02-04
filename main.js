@@ -496,6 +496,20 @@ function init() {
 
 
 
+  var info = L.control();
+
+  info.onAdd = function (map) {
+	this._div = L.DomUtil.create('div', 'info');
+	this.update();
+	return this._div;
+  };
+
+  info.update = function (props) {
+	this._div.innerHTML = feature.properties.he_vakiy;
+  };
+
+
+
   function getColor(d) {
     return d > 1000 ? '#800026' :
     	   d > 500  ? '#BD0026' :
