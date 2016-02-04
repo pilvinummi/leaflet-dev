@@ -203,7 +203,7 @@ function init() {
               "<br><b>Asuntojen määrä: </b> " + feature.properties.ra_asunn +
               "<br><b>Asumisväljyys: </b> " + feature.properties.te_as_valj);
             });
-            
+  
             /*
             layer.setStyle({
             	
@@ -496,32 +496,17 @@ function init() {
 
 
 
-  var info = L.control();
-
-  info.onAdd = function (map) {
-	this._div = L.DomUtil.create('div', 'info');
-	this.update();
-	return this._div;
-  };
-
-  info.update = function (props) {
-	this._div.innerHTML = feature.properties.he_vakiy;
-  };
-
-
 
   function getColor(d) {
-    return d > 1000 ? '#800026' :
-    	   d > 500  ? '#BD0026' :
-	   d > 200  ? '#E31A1C' :
-           d > 100  ? '#FC4E2A' :
-	   d > 50   ? '#FD8D3C' :
-	   d > 20   ? '#FEB24C' :
-	   d > 10   ? '#FED976' :
+    return d > 10000 ? '#800026' :
+    	   d > 8000  ? '#BD0026' :
+	   d > 6000  ? '#E31A1C' :
+           d > 4000  ? '#FC4E2A' :
+	   d > 2000   ? '#FD8D3C' :
+	   d > 1000   ? '#FEB24C' :
+	   d > 0   ? '#FED976' :
 	              '#FFEDA0';
   }
-
-
 
 
   var legend = L.control({position: 'bottomleft'});
