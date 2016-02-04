@@ -73,7 +73,7 @@ function init() {
           filter: function(feature, layer) {return (feature.properties.kayttotarkoitus == filter);},
           onEachFeature: onEachFeature_viheralueet
             
-        }).addTo(tasot);
+        }).addLayer(tasot); //.addTo(tasot);
       }
     });
     //tasot.addTo(map);
