@@ -293,6 +293,37 @@ function init() {
       buffer_layer.clearLayers();
     });
   }
+  
+  
+  function getColor(d) {
+    return d > 12000  ? "#a63603" :
+    	   d > 10000  ? "#d94801" :
+    	   d > 8000   ? "#f16913" :
+	   d > 6000   ? "#fd8d3c" :
+           d > 4000   ? "#fdae6b" :
+	   d > 2000   ? "#fdd0a2" :
+	   d > 1000   ? "#fee6ce" :
+	   d > 0      ? "#fff5eb" :
+	                "#ffffff";
+  }
+
+  legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 1000, 2000, 4000, 6000, 8000, 10000, 12000],
+        labels = [];
+        
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+  };
+  
+  legend.addTo(map);
 	
   
   
@@ -485,7 +516,7 @@ function init() {
   hauta.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      filter = "%Haudat&" //kaytto.indexOf("Haudat") > -1
+      filter = typeof "Haudat" //kaytto.indexOf("Haudat") > -1
       fillcolor = "#666666"
       update_layer();
       tasot.addTo(map);
@@ -498,7 +529,7 @@ function init() {
   muut_asema.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      filter = typeof "semakaavoitettu%" //kaytto.indexOf("semakaavoitettu") > -1
+      filter = typeof "semakaavoitettu" //kaytto.indexOf("semakaavoitettu") > -1
       fillcolor = "#336666"
       update_layer();
       tasot.addTo(map);
@@ -530,37 +561,5 @@ function init() {
       map.removeLayer(tasot);
     }
   });
-  
-
-
-  function getColor(d) {
-    return d > 12000  ? "#a63603" :
-    	   d > 10000  ? "#d94801" :
-    	   d > 8000   ? "#f16913" :
-	   d > 6000   ? "#fd8d3c" :
-           d > 4000   ? "#fdae6b" :
-	   d > 2000   ? "#fdd0a2" :
-	   d > 1000   ? "#fee6ce" :
-	   d > 0      ? "#fff5eb" :
-	                "#ffffff";
-  }
-
-  legend.onAdd = function (map) {
-
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 1000, 2000, 4000, 6000, 8000, 10000, 12000],
-        labels = [];
-        
-    // loop through our density intervals and generate a label with a colored square for each interval
-    for (var i = 0; i < grades.length; i++) {
-        div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    }
-
-    return div;
-  };
-  
-  legend.addTo(map);
 	
 }
