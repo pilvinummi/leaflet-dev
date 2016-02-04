@@ -372,19 +372,25 @@ function init() {
       filter = "Kesämaja-alue" 
       update_layer();
      
+      //tasot.addTo(map);
+     
       fillcolor = "#666699"
       filter = "Siirtolapuutarha"
       update_layer();
+   
+      //tasot.addTo(map);
    
       fillcolor = "#666699"
       filter = "Viljelypalsta"
       update_layer();
      
+      tasot.addTo(map);
+      
       fillcolor = "#666699"
       filter = "Viljelypalsta-alue"
       update_layer();
     
-      tasot.addTo(map);
+      //tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
