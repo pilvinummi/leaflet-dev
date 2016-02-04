@@ -15,7 +15,8 @@ function init() {
   var paavo_wfs = "https://pesonet1.github.io/Leaflet/paavo.json"
   
   //Geojson-objektit lisataan tasot grouppiin
-  var tasot = new L.LayerGroup();
+  //var tasot = new L.LayerGroup();
+  var tasot = L.geoJson.ajax();
   var kaikki = new L.LayerGroup();
   
   //Muuttujat filterointiin
@@ -330,9 +331,9 @@ function init() {
     if (checked) {
       update_all();
     } else {
-      //map.removeLayer(kaikki);
+      map.removeLayer(kaikki);
       
-      kaikki.clearLayers();
+      //kaikki.clearLayers();
     }
   });
   
@@ -357,6 +358,7 @@ function init() {
       filter = "Kartano- ja huvila-alue"
       fillcolor = "#996699"
       update_layer();
+      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
@@ -369,7 +371,9 @@ function init() {
       //Ei lisaa kartalle muita kuin Kesamaja-alueet... :/
       fillcolor = "#666699"
       filter = "Kesämaja-alue" 
-      update_layer();
+      var update = update_layer();
+      
+      //tasot.refresh(update);
      
       fillcolor = "#666699"
       filter = "Siirtolapuutarha"
@@ -395,6 +399,7 @@ function init() {
       filter = "Koira-aitaus"
       fillcolor = "#666699"
       update_layer();
+      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
@@ -408,11 +413,13 @@ function init() {
       fillcolor = "#666699"
       filter = "Leikkipaikka"
       update_layer();
+      
       tasot.addTo(map);
       
       fillcolor = "#666699"
       filter = "Leikkipuisto"
       update_layer();
+      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
@@ -425,6 +432,7 @@ function init() {
       filter = "Luonnonsuojelualue"
       fillcolor = "#336666"
       update_layer();
+      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
@@ -438,6 +446,7 @@ function init() {
       filter = "Uimaranta-alue" || kaytto == "Venesatama / Venevalkama"
       fillcolor = "#336699"
       update_layer();
+      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
@@ -451,6 +460,7 @@ function init() {
       filter = kaytto.indexOf("Haudat") > -1
       fillcolor = "#666666"
       update_layer();
+      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
@@ -464,6 +474,7 @@ function init() {
       filter = kaytto.indexOf("semakaavoitettu") > -1
       fillcolor = "#336666"
       update_layer();
+      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
@@ -476,6 +487,7 @@ function init() {
       filter = "Yleiskaavan viheralue"
       fillcolor = "#336666"
       update_layer();
+      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
@@ -488,6 +500,7 @@ function init() {
       filter = "Muut viheralueet"
       fillcolor = "#fff"
       update_layer();
+      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
