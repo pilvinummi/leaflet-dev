@@ -346,8 +346,6 @@ function init() {
       filter = "Ulkoilumetsä"
       fillcolor = "red"
       update_layer();
-      
-      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -359,8 +357,17 @@ function init() {
       filter = "Kartano- ja huvila-alue"
       fillcolor = "#996699"
       update_layer();
-      
-      tasot.addTo(map);
+    } else {
+      map.removeLayer(tasot);
+    }
+  });
+  
+  kesamaja.addEventlistener('change', function() {
+    var checked = this.checked;
+    if (checked) {
+      fillcolor = "#666699"
+      filter = "Kesämaja-alue" 
+      update_layer();
     } else {
       map.removeLayer(tasot);
     }
@@ -369,62 +376,64 @@ function init() {
   siirtola.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      //Ei lisaa kartalle muita kuin Kesamaja-alueet... :/
-      fillcolor = "#666699"
-      filter = "Kesämaja-alue" 
-      update_layer();
-     
-      //tasot.addTo(map);
-     
       fillcolor = "#666699"
       filter = "Siirtolapuutarha"
       update_layer();
-   
-      //tasot.addTo(map);
-      /*
-      fillcolor = "#666699"
-      filter = "Viljelypalsta"
-      update_layer();
-      */
-      /*
-      fillcolor = "#666699"
-      filter = "Viljelypalsta-alue"
-      update_layer();
-      */
-      //tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
   });
   
+  viljelypalsta.addEventListener('change', function() {
+    var checked = this.checked;
+    if (checked) {
+      fillcolor = "#666699"
+      filter = "Viljelypalsta"
+      update_layer();
+    } else {
+      map.removeLayer(tasot);
+    }
+  });
+  
+  viljelypalsta_alue.addEventListener('change', function() {
+    var checked = this.checked;
+    if (checked) {
+      fillcolor = "#666699"
+      filter = "Viljelypalsta-alue"
+      update_layer();
+    } else {
+      map.removeLayer(tasot);
+    }
+  }); 
+
   koira.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
       filter = "Koira-aitaus"
       fillcolor = "#666699"
       update_layer();
-      
-      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
   });
   
-  leikki.addEventListener('change', function() {
+  leikkipaikka.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      //Lisaa kartalle vain leikkipaikat...
       fillcolor = "#666699"
       filter = "Leikkipaikka"
       update_layer();
-      
-      tasot.addTo(map);
-      
+    } else {
+      map.removeLayer(tasot);
+    }
+  });
+  
+  leikkipuisto.addEventListener('change', function() {
+    var checked = this.checked;
+    if (checked) {
       fillcolor = "#666699"
       filter = "Leikkipuisto"
       update_layer();
-      
-      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -436,27 +445,34 @@ function init() {
       filter = "Luonnonsuojelualue"
       fillcolor = "#336666"
       update_layer();
-      
-      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
   });
   
-  uima.addEventListener('change', function() {
+  uimaranta.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      //Lisaa alueella vain Uimaranta-alueet
-      filter = "Uimaranta-alue" || kaytto == "Venesatama / Venevalkama"
+      filter = "Uimaranta-alue"
       fillcolor = "#336699"
       update_layer();
-      
-      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
   });
   
+  venesatama.addEventListener('change', function() {
+    var checked = this.checked;
+    if (checked) {
+      filter = "Venesatama / Venevalkama"
+      fillcolor = "#336699"
+      update_layer();
+    } else {
+      map.removeLayer(tasot);
+    }
+  });
+ 
+  //taytyy selvittaaa...
   hauta.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
@@ -471,6 +487,7 @@ function init() {
     }
   });
   
+  //taytyy selvittaaa...
   muut_asema.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
@@ -491,8 +508,6 @@ function init() {
       filter = "Yleiskaavan viheralue"
       fillcolor = "#336666"
       update_layer();
-      
-      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -504,8 +519,6 @@ function init() {
       filter = "Muut viheralueet"
       fillcolor = "#fff"
       update_layer();
-      
-      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
