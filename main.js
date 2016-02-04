@@ -498,14 +498,15 @@ function init() {
 
 
   function getColor(d) {
-    return d > 10000 ? '#800026' :
-    	   d > 8000  ? '#BD0026' :
-	   d > 6000  ? '#E31A1C' :
-           d > 4000  ? '#FC4E2A' :
-	   d > 2000   ? '#FD8D3C' :
-	   d > 1000   ? '#FEB24C' :
-	   d > 0   ? '#FED976' :
-	              '#FFEDA0';
+    return d > 12000  ? "#a63603"
+    	   d > 10000  ? "#d94801" :
+    	   d > 8000   ? "#f16913" :
+	   d > 6000   ? "#fd8d3c" :
+           d > 4000   ? "#fdae6b" :
+	   d > 2000   ? "#fdd0a2" :
+	   d > 1000   ? "#fee6ce" :
+	   d > 0      ? "#fff5eb" :
+	                "#ffffff";
   }
 
 
