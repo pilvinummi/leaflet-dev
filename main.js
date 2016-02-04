@@ -60,7 +60,7 @@ function init() {
             var fillColor, 
             kaytto = feature.properties.kayttotarkoitus;
             
-            if ( kaytto == filter ) fillColor = fillcolor;
+            if ( kaytto.indexOf(filter) > -1 ) fillColor = fillcolor;
             
             return {
       	      color: "black", 
@@ -116,10 +116,8 @@ function init() {
           //Yleiskaavan viheralue
           //Yleiskaavan viheralue / erityiskohteet
           //Yleiskaavan viheralue / koira-aitaus
-          //Ulkoilumetsä
           //Tontti (rakentamattomat / sopimus)
           //Erityiskohteet, asemakaavoitettu viheralue
-          //Viljelypalsta-alue
           //Haudat (hautausmaat)
           //Suojaviheralue
           //Katualue
@@ -516,7 +514,7 @@ function init() {
   hauta.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      filter = typeof "Haudat" //kaytto.indexOf("Haudat") > -1
+      filter = "Haudat" //kaytto.indexOf("Haudat") > -1
       fillcolor = "#666666"
       update_layer();
       tasot.addTo(map);
@@ -529,7 +527,7 @@ function init() {
   muut_asema.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      filter = typeof "semakaavoitettu" //kaytto.indexOf("semakaavoitettu") > -1
+      filter = "Asemakaavoitettu" //kaytto.indexOf("semakaavoitettu") > -1
       fillcolor = "#336666"
       update_layer();
       tasot.addTo(map);
