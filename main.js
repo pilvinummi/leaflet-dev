@@ -73,11 +73,9 @@ function init() {
           filter: function(feature, layer) {return (feature.properties.kayttotarkoitus == filter);},
           onEachFeature: onEachFeature_viheralueet
             
-        }) //.addTo(tasot); //.addData(tasot); //.addLayer(tasot); 
+        }).addTo(tasot);
       }
     });
-    
-    viheralueet.addTo(tasot);
     
   }
  
