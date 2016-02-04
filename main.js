@@ -77,7 +77,7 @@ function init() {
       }
     });
     
-    tasot.addLayer(viheralueet);
+    viheralueet.addTo(tasot);
     
   }
  
