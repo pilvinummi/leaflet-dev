@@ -18,7 +18,7 @@ function init() {
   //Muuttujat filterointiin
   var filter;
   var fillcolor;
-  var radius = null;
+  var radius; // = null;
   
  
   var map = L.map('map', {
