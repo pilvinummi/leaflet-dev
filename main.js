@@ -9,20 +9,19 @@ function init() {
   var legend = L.control({position: 'bottomleft'});
   
   //Kaytetaan valmiiksi ladattua aineistoa -> on huomattavasti nopeampi kuin aina ladata aineisto uudestaan
-  //var viheralueet_wfs = "http://geoserver.hel.fi/geoserver/hkr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=hkr:ylre_viheralue&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson"
-  //var paavo_wfs = "http://geoserv.stat.fi:8080/geoserver/postialue/wfs?service=WFS&version=1.0.0&request=GetFeature&typeName=postialue:pno_tilasto_2015&filter=%3CPropertyIsEqualTo%3E%3CPropertyName%3Ekunta%3C/PropertyName%3E%3CLiteral%3E091%3C/Literal%3E%3C/PropertyIsEqualTo%3E&maxFeatures=1000&srsName=EPSG:4326&format=json&outputFormat=json&format_options=callback:getJson";
   var all = "https://pesonet1.github.io/Leaflet/all.json"
   var paavo_wfs = "https://pesonet1.github.io/Leaflet/paavo.json"
   
   //Geojson-objektit lisataan tasot grouppiin
   var tasot = new L.LayerGroup();
   var kaikki = new L.LayerGroup();
+  var ulkoilumetsat = new L.LayerGroup();
   
   //Muuttujat filterointiin
   var filter;
   var fillcolor;
   var radius;
-  
+  var taso;
  
   var map = L.map('map', {
     center: new L.LatLng(60.1708, 24.9375),
@@ -52,8 +51,6 @@ function init() {
     var viheralueet = $.ajax({
       url: all,
       type: 'GET',
-      //datatype:"json",
-      //jsonCallback: 'getJson',
       success: function(response) {
         viheralueet = L.geoJson(response, {
           style: function (feature) {
@@ -73,7 +70,7 @@ function init() {
           filter: function(feature, layer) {return (feature.properties.kayttotarkoitus == filter);},
           onEachFeature: onEachFeature_viheralueet
             
-        }).addTo(tasot);
+        }).addTo(taso);
       }
     });
   }
@@ -84,8 +81,6 @@ function init() {
     var viheralueet = $.ajax({ 
       url: all,
       type: 'GET',
-      //datatype:"json",
-      //jsonCallback: 'getJson',
       success : function (response) {
         viheralueet = L.geoJson(response, {
           style: function (feature) {
@@ -367,10 +362,11 @@ function init() {
   ulkoilumetsa.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
+      var taso = ulkoilumetsa
       filter = "Ulkoilumetsä"
       fillcolor = "red"
       update_layer();
-      tasot.addTo(map);
+      taso.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
