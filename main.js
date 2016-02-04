@@ -295,7 +295,7 @@ function init() {
   none.addEventListener('change', function() {
     var checked = this.checked;
     radius = null
-  }	
+  });
   	
   //Bufferikoon 150m eventlisteneri
   box_150.addEventListener('change', function() {
