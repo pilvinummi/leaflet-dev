@@ -485,11 +485,9 @@ function init() {
   hauta.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      //Ei lisaa mitaan
-      filter = kaytto.indexOf("Haudat") > -1
+      filter = "%Haudat&" //kaytto.indexOf("Haudat") > -1
       fillcolor = "#666666"
       update_layer();
-      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
@@ -500,11 +498,9 @@ function init() {
   muut_asema.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      //Ei lisaa mitaan
-      filter = kaytto.indexOf("semakaavoitettu") > -1
+      filter = "%semakaavoitettu%" //kaytto.indexOf("semakaavoitettu") > -1
       fillcolor = "#336666"
       update_layer();
-      
       tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
@@ -527,7 +523,7 @@ function init() {
     var checked = this.checked;
     if (checked) {
       filter = "Muut viheralueet"
-      fillcolor = "#fff"
+      fillcolor = "#ffffff"
       update_layer();
       tasot.addTo(map);
     } else {
