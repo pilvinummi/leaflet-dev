@@ -59,7 +59,8 @@ html, body {
       
       .ScrollStyle
       {
-	max-height: 150px;
+      	float: left;
+	max-height: 250px;
 	overflow-y: scroll;
       }
       
