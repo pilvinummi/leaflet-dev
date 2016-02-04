@@ -21,7 +21,6 @@ function init() {
   var filter;
   var fillcolor;
   var radius;
-  var taso;
  
   var map = L.map('map', {
     center: new L.LatLng(60.1708, 24.9375),
@@ -70,7 +69,7 @@ function init() {
           filter: function(feature, layer) {return (feature.properties.kayttotarkoitus == filter);},
           onEachFeature: onEachFeature_viheralueet
             
-        }).addTo(taso);
+        }).addTo(tasot);
       }
     });
   }
@@ -362,11 +361,10 @@ function init() {
   ulkoilumetsa.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      var taso = ulkoilumetsat
       filter = "Ulkoilumetsä"
       fillcolor = "#336666"
-      update_layer();
-      ulkoilumetsat.addTo(map);
+      ulkoilumetsat.addData(update_layer())
+      //tasot.addTo(map);
     } else {
       map.removeLayer(ulkoilumetsa);
     }
