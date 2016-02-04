@@ -15,7 +15,8 @@ function init() {
   var paavo_wfs = "https://pesonet1.github.io/Leaflet/paavo.json"
   
   //Geojson-objektit lisataan tasot grouppiin
-  var tasot = new L.LayerGroup();
+  //var tasot = new L.LayerGroup();
+  var tasot = new L.FeatureGroup();
   var kaikki = new L.LayerGroup();
   
   //Muuttujat filterointiin
@@ -73,10 +74,12 @@ function init() {
           filter: function(feature, layer) {return (feature.properties.kayttotarkoitus == filter);},
           onEachFeature: onEachFeature_viheralueet
             
-        }).addTo(tasot); //.addData(tasot); //.addLayer(tasot); 
+        }) //.addTo(tasot); //.addData(tasot); //.addLayer(tasot); 
       }
     });
-    //tasot.addTo(map);
+    
+    tasot.addLayer(viheralueet);
+    
   }
  
   
