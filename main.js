@@ -15,7 +15,7 @@ function init() {
   var paavo_wfs = "https://pesonet1.github.io/Leaflet/paavo.json"
   
   //Geojson-objektit lisataan tasot grouppiin
-  var tasot = new L.LayerGroup().addTo(map);
+  var tasot = new L.LayerGroup();
   var kaikki = new L.LayerGroup();
   
   //Muuttujat filterointiin
@@ -76,6 +76,8 @@ function init() {
         }).addTo(tasot);
       }
     });
+    
+    tasot.addTo(map);
     
   }
  
