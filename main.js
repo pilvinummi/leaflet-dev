@@ -73,7 +73,7 @@ function init() {
           filter: function(feature, layer) {return (feature.properties.kayttotarkoitus == filter);},
           onEachFeature: onEachFeature_viheralueet
             
-        }).addLayer(tasot); //.addTo(tasot);
+        }).addTo(tasot); //.addData(tasot); //.addLayer(tasot); 
       }
     });
     //tasot.addTo(map);
@@ -370,9 +370,7 @@ function init() {
       //Ei lisaa kartalle muita kuin Kesamaja-alueet... :/
       fillcolor = "#666699"
       filter = "Kesämaja-alue" 
-      var update = update_layer();
-      
-      //tasot.refresh(update);
+      update_layer();
      
       fillcolor = "#666699"
       filter = "Siirtolapuutarha"
@@ -386,7 +384,7 @@ function init() {
       filter = "Viljelypalsta-alue"
       update_layer();
     
-      tasot.addTo(map);
+      map.addLayer(tasot);
     } else {
       map.removeLayer(tasot);
     }
