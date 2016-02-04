@@ -2,6 +2,7 @@
 function init() {
   
   //Laitetaan kaikki muuttujat tahan...
+  document.getElementById("none").checked = true;
   var container = document.getElementById('information');
   var removeButton = document.getElementById('remove');
   
@@ -294,7 +295,6 @@ function init() {
   
   
   none.addEventListener('change', function() {
-    document.none.checked = true
     var checked = this.checked;
     radius = null
   });
