@@ -347,10 +347,16 @@ function init() {
     }
   });
   
+  
+  function UnCheckAll(chk) {
+    for (i = 0; i < chk.length; i++)
+      chk[i].checked = false ;
+  }
+  
   resetButton.addEventListener('click',function(event) {
       tasot.clearLayers();
       //Nollataan checkboxit
-      checked = this.unchecked;
+      UnCheckAll();
     });
   
   
@@ -361,6 +367,7 @@ function init() {
     if (checked) {
       filter = "Ulkoilumetsä"
       fillcolor = "#336666"
+      update_layer();
       tasot.addTo(map);
     } else {
       map.removeLayer(ulkoilumetsa);
