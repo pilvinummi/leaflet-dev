@@ -16,8 +16,8 @@ function init() {
   var kaikki = new L.LayerGroup();
   
   //Muuttujat filterointiin
-  var filter = null;
-  var fillcolor = null;
+  var filter;
+  var fillcolor;
   var radius = null;
   
  
