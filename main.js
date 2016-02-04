@@ -76,9 +76,6 @@ function init() {
         }).addTo(tasot);
       }
     });
-    
-    tasot.addTo(map);
-    
   }
  
   
@@ -346,6 +343,7 @@ function init() {
       filter = "Ulkoilumetsä"
       fillcolor = "red"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -357,6 +355,7 @@ function init() {
       filter = "Kartano- ja huvila-alue"
       fillcolor = "#996699"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -368,6 +367,7 @@ function init() {
       fillcolor = "#666699"
       filter = "Kesämaja-alue" 
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -379,6 +379,7 @@ function init() {
       fillcolor = "#666699"
       filter = "Siirtolapuutarha"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -390,6 +391,7 @@ function init() {
       fillcolor = "#666699"
       filter = "Viljelypalsta"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -401,6 +403,7 @@ function init() {
       fillcolor = "#666699"
       filter = "Viljelypalsta-alue"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -412,6 +415,7 @@ function init() {
       filter = "Koira-aitaus"
       fillcolor = "#666699"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -423,6 +427,7 @@ function init() {
       fillcolor = "#666699"
       filter = "Leikkipaikka"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -434,6 +439,7 @@ function init() {
       fillcolor = "#666699"
       filter = "Leikkipuisto"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -445,6 +451,7 @@ function init() {
       filter = "Luonnonsuojelualue"
       fillcolor = "#336666"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -456,6 +463,7 @@ function init() {
       filter = "Uimaranta-alue"
       fillcolor = "#336699"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -467,6 +475,7 @@ function init() {
       filter = "Venesatama / Venevalkama"
       fillcolor = "#336699"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -508,6 +517,7 @@ function init() {
       filter = "Yleiskaavan viheralue"
       fillcolor = "#336666"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
@@ -519,6 +529,7 @@ function init() {
       filter = "Muut viheralueet"
       fillcolor = "#fff"
       update_layer();
+      tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
     }
