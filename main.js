@@ -361,7 +361,7 @@ function init() {
     }
   });
   
-  kesamaja.addEventlistener('change', function() {
+  kesamaja.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
       fillcolor = "#666699"
