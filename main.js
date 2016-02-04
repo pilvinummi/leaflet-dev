@@ -292,7 +292,9 @@ function init() {
   }
 	
   
+  
   none.addEventListener('change', function() {
+    document.none.checked = true
     var checked = this.checked;
     radius = null
   });
