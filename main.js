@@ -6,7 +6,6 @@ function init() {
   var container = document.getElementById('information');
   var removeButton = document.getElementById('remove');
   var resetButton = document.getElementById('reset');
-  var checked = this.checked;
   
   var legend = L.control({position: 'bottomleft'});
   
@@ -318,6 +317,7 @@ function init() {
   	
   //Bufferikoon 150m eventlisteneri
   box_150.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       radius = 150 * 0.000621371192
     } else {
@@ -327,6 +327,7 @@ function init() {
  
   //Bufferikoon 300m eventlisteneri
   box_300.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       radius = 300 * 0.000621371192
     } else {
@@ -338,6 +339,7 @@ function init() {
 
   //Kaikkien viheralueiden eventlistener
   karttataso.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       update_all();
     } else {
@@ -355,6 +357,7 @@ function init() {
   
   //Loput eventlistenerit eri tasoille
   ulkoilumetsa.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       filter = "Ulkoilumetsä"
       fillcolor = "#336666"
@@ -365,6 +368,7 @@ function init() {
   });
 
   kartano.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       filter = "Kartano- ja huvila-alue"
       fillcolor = "#996699"
@@ -376,6 +380,7 @@ function init() {
   });
   
   kesamaja.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       fillcolor = "#666699"
       filter = "Kesämaja-alue" 
@@ -387,6 +392,7 @@ function init() {
   });
   
   siirtola.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       fillcolor = "#666699"
       filter = "Siirtolapuutarha"
@@ -398,6 +404,7 @@ function init() {
   });
   
   viljelypalsta.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       fillcolor = "#666699"
       filter = "Viljelypalsta"
@@ -409,6 +416,7 @@ function init() {
   });
   
   viljelypalsta_alue.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       fillcolor = "#666699"
       filter = "Viljelypalsta-alue"
@@ -420,6 +428,7 @@ function init() {
   }); 
 
   koira.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       filter = "Koira-aitaus"
       fillcolor = "#666699"
@@ -431,6 +440,7 @@ function init() {
   });
   
   leikkipaikka.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       fillcolor = "#666699"
       filter = "Leikkipaikka"
@@ -442,6 +452,7 @@ function init() {
   });
   
   leikkipuisto.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       fillcolor = "#666699"
       filter = "Leikkipuisto"
@@ -453,6 +464,7 @@ function init() {
   });
   
   luonto.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       filter = "Luonnonsuojelualue"
       fillcolor = "#336666"
@@ -464,6 +476,7 @@ function init() {
   });
   
   uimaranta.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       filter = "Uimaranta-alue"
       fillcolor = "#336699"
@@ -475,6 +488,7 @@ function init() {
   });
   
   venesatama.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       filter = "Venesatama / Venevalkama"
       fillcolor = "#336699"
@@ -486,6 +500,7 @@ function init() {
   });
  
   hauta.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       filter = "Haudat"
       fillcolor = "#666666"
@@ -497,6 +512,7 @@ function init() {
   });
   
   muut_asema.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       filter = "semakaavoitettu"
       fillcolor = "#336666"
@@ -508,6 +524,7 @@ function init() {
   });
   
   yleiskaava.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       filter = "Yleiskaavan viheralue"
       fillcolor = "#336666"
@@ -519,6 +536,7 @@ function init() {
   });
   
   muut.addEventListener('change', function() {
+    var checked = this.checked;
     if (checked) {
       filter = "Muut viheralueet"
       fillcolor = "#ffffff"
