@@ -15,7 +15,6 @@ function init() {
   //Geojson-objektit lisataan tasot grouppiin
   var tasot = new L.LayerGroup();
   var kaikki = new L.LayerGroup();
-  var ulkoilumetsat = new L.LayerGroup();
   
   //Muuttujat filterointiin
   var filter;
@@ -202,12 +201,6 @@ function init() {
               "<br><b>Asuntojen määrä: </b> " + feature.properties.ra_asunn +
               "<br><b>Asumisväljyys: </b> " + feature.properties.te_as_valj);
             });
-  
-            /*
-            layer.setStyle({
-            	
-            });
-	    */
         
           layer.on({
             click: zoomToFeature
@@ -278,7 +271,7 @@ function init() {
       
     }
   
-    //Bufferin poisto-nappia varten tarvitaan sille eventlisteneri
+    //Bufferin poisto-nappia varten tarvitaan sille eventlistener
     removeButton.addEventListener('click',function(event) {
       buffer_layer.clearLayers();
     });
@@ -363,8 +356,7 @@ function init() {
     if (checked) {
       filter = "Ulkoilumetsä"
       fillcolor = "#336666"
-      ulkoilumetsat.addData(update_layer())
-      //tasot.addTo(map);
+      tasot.addTo(map);
     } else {
       map.removeLayer(ulkoilumetsa);
     }
