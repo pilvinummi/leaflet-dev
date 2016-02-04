@@ -498,7 +498,7 @@ function init() {
   muut_asema.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      filter = "%semakaavoitettu%" //kaytto.indexOf("semakaavoitettu") > -1
+      filter = typeof "semakaavoitettu%" //kaytto.indexOf("semakaavoitettu") > -1
       fillcolor = "#336666"
       update_layer();
       tasot.addTo(map);
