@@ -57,6 +57,11 @@ html, body {
       	font-size:small;
       }
       
+      .ScrollStyle
+      {
+	max-height: 150px;
+	overflow-y: scroll;
+      }
       
       .info {
 	padding: 6px 8px;
