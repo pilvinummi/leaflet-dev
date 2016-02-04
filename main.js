@@ -485,7 +485,7 @@ function init() {
     }
   });
   
-
+  /*
   //Tama scripti hoitaa sen, etta yksi laatikoista voi vain olla kerrallaan valittuna
   $("input:checkbox").on('click', function() {
     var $box = $(this);
@@ -497,7 +497,7 @@ function init() {
       $box.prop("checked", false);
     }
   });
-
+  */
 
 
 
