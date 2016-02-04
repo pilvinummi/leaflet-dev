@@ -366,9 +366,9 @@ function init() {
       filter = "Ulkoilumetsä"
       fillcolor = "red"
       update_layer();
-      taso.addTo(map);
+      ulkoilumetsa.addTo(map);
     } else {
-      map.removeLayer(tasot);
+      map.removeLayer(ulkoilumetsa);
     }
   });
 
