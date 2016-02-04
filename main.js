@@ -386,12 +386,11 @@ function init() {
       filter = "Viljelypalsta"
       update_layer();
      
-      
-      
+      /*
       fillcolor = "#666699"
       filter = "Viljelypalsta-alue"
       update_layer();
-    
+      */
       //tasot.addTo(map);
     } else {
       map.removeLayer(tasot);
