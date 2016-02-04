@@ -29,7 +29,11 @@ function init() {
   });
   	
   //Scale
-  L.control.scale().addTo(map);
+  L.control.scale({
+  	position: 'bottomleft',
+  	updateWhenIdle: true,
+  	maxWidth: 200
+  }).addTo(map);
   
   //MapBox-light taustakartta
   basemap = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicGVzb25ldDEiLCJhIjoiY2lqNXJua2k5MDAwaDI3bTNmaGZqc2ZuaSJ9.nmLkOlsQKzwMir9DfmCNPg', {
