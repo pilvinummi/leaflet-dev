@@ -498,7 +498,7 @@ function init() {
 
 
   function getColor(d) {
-    return d > 12000  ? "#a63603"
+    return d > 12000  ? "#a63603" :
     	   d > 10000  ? "#d94801" :
     	   d > 8000   ? "#f16913" :
 	   d > 6000   ? "#fd8d3c" :
