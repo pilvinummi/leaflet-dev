@@ -149,7 +149,7 @@ function init() {
     
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia (jos laittaa !=, niin silloin
     //popupia ei saa luotua missaan tilanteessa
-    if (radius == null) {
+    if (radius === null) {
       popupOptions = {maxWidth: 200};
       layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
         "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
@@ -329,9 +329,9 @@ function init() {
   box_150.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      this.radius = 150 * 0.000621371192;
+      radius = 150 * 0.000621371192;
     } else {
-      this.radius = null;
+      radius = null;
     }
   });
  
@@ -339,9 +339,9 @@ function init() {
   box_300.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      this.radius = 300 * 0.000621371192;
+      radius = 300 * 0.000621371192;
     } else {
-      this.radius = null;
+      radius = null;
     }
   });
 
