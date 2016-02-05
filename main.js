@@ -146,9 +146,10 @@ function init() {
   
   //Taman tarkoituksena on mahdollistaa popupin ja muiden funktioiden toimimisen viheralueet-tasoilla
   function onEachFeature_viheralueet(feature, layer) {
-    /*
+    
     popupOptions = {maxWidth: 200};
-   
+    layer.bindPopup("jee", popupOptions);
+    /*
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
     if (window.radius == null) {
       layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
@@ -263,11 +264,6 @@ function init() {
   //Funktio bufferin luonnista, joka luodaan viheralueetta klikatessa
   function addBuffer(e) {
     var layer = e.target;
-    
-    if (radius == null) {
-      popupOptions = {maxWidth: 200};
-      layer.bindPopup("JEES", popupOptions);
-    }
     
     if (radius != null) {
       var layer_geojson = layer.toGeoJSON();
