@@ -32,10 +32,11 @@ function init() {
     //center: new L.LatLng(60.192871, 25.049858), //(60.1708, 24.9375),
     //zoom: 12,
     maxBounds: bounds,
-    //minZoom: 10,
+    minZoom: 10,
     maxZoom: 18
   });
   
+  //Fit to bounds
   map.fitBounds(bounds);
   	
   //Scale
