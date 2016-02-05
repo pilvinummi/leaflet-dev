@@ -22,14 +22,14 @@ function init() {
   var fillcolor;
   var radius;
  
-  /*
-  var southWest = L.latLng(60.082097, 24.786873),
-    northEast = L.latLng(60.327415, 25.322456),
-    bounds = L.latLngBounds(southWest, northEast);
-  */
+  
+  var southWest = L.latLng(60.082097, 24.786873);
+  var northEast = L.latLng(60.327415, 25.322456);
+  var bounds = L.latLngBounds(southWest, northEast);
+  
   
   var map = L.map('map', {
-    center: new L.LatLng(60.192871, 25.049858), //(60.1708, 24.9375),
+    //center: new L.LatLng(60.192871, 25.049858), //(60.1708, 24.9375),
     zoom: 12,
     //maxBounds: bounds,
     maxZoom: 18,
@@ -37,7 +37,7 @@ function init() {
   });
   
   //Fit to bounds
-  //map.fitBounds(bounds);
+  map.fitBounds(bounds);
   	
   //Scale
   L.control.scale({
