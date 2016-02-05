@@ -152,11 +152,13 @@ function init() {
         "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
         "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
         "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
-        "<br><b>Pinta-ala: </b> " + Math.round(feature.properties.pinta_ala) + "m2";
+        "<br><b>Pinta-ala: </b> " + Math.round(feature.properties.pinta_ala) + " m2";
     
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
     if (window.radius == null) {
       layer.bindPopup(content, popupOptions);
+    } else {
+      feature.unbindPopup();
     }
     
     layer.on({
@@ -266,8 +268,6 @@ function init() {
     var layer = e.target;
    
     if (radius != null) {
-      layer.unbindPopup();
-    
       var layer_geojson = layer.toGeoJSON();
       var buffered = turf.buffer(layer_geojson, radius, 'miles');
       var buffer_layer = L.geoJson(buffered).addTo(map);
