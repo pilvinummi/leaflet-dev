@@ -32,7 +32,7 @@ function init() {
     //center: new L.LatLng(60.192871, 25.049858), //(60.1708, 24.9375),
     //zoom: 12,
     maxBounds: bounds,
-    minZoom: 12,
+    minZoom: 11,
     maxZoom: 18
   });
   
