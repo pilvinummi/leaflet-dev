@@ -263,6 +263,7 @@ function init() {
   //Funktio bufferin luonnista, joka luodaan viheralueetta klikatessa
   function addBuffer(e) {
     var layer = e.target;
+    var feature = e.target;
     
     if (radius == null) {
       popupOptions = {maxWidth: 200};
