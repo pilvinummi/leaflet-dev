@@ -155,7 +155,7 @@ function init() {
         "<br><b>Pinta-ala: </b> " + Math.round(feature.properties.pinta_ala) + " m2";
 
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
-    if (this.radius == null) {
+    if (this.radius != null) {
       layer.bindPopup(content, popupOptions);
     } else {
       //ei siirryta koskaan else ehtoon...
