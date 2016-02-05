@@ -208,11 +208,11 @@ function init() {
             layer.on('click', function() {
               information.innerHTML = '';
               information.innerHTML = ("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
-              "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
+              "<br><b>Pinta-ala: </b> " + Math.round(feature.properties.pinta_ala) + " m2" +
               "<br><b>Asukasmäärä: </b> " + feature.properties.he_vakiy +
               "<br><b>Asukastiheys: </b> " + Math.round(feature.properties.he_vakiy / (feature.properties.pinta_ala / 1000000)) + " as/k-m2" +
               "<br><b>Asuntojen määrä: </b> " + feature.properties.ra_asunn +
-              "<br><b>Asumisväljyys: </b> " + feature.properties.te_as_valj);
+              "<br><b>Asumisväljyys: </b> " + Math.round(feature.properties.te_as_valj));
             });
         
           layer.on({
