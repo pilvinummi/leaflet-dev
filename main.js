@@ -20,7 +20,7 @@ function init() {
   //Muuttujat filterointiin
   var filter;
   var fillcolor;
-  var radius;
+  var radius = null;
  
   
   var southWest = L.latLng(60.082097, 24.786873);
