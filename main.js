@@ -147,11 +147,11 @@ function init() {
   //Taman tarkoituksena on mahdollistaa popupin ja muiden funktioiden toimimisen viheralueet-tasoilla
   function onEachFeature_viheralueet(feature, layer) {
   	
-    var radius = 1
+    var rad = radius
     
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia (jos laittaa !=, niin silloin
     //popupia ei saa luotua missaan tilanteessa
-    if (radius == null) {
+    if (rad == null) {
       popupOptions = {maxWidth: 200};
       layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
         "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
