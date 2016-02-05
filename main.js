@@ -155,7 +155,7 @@ function init() {
         "<br><b>Pinta-ala: </b> " + Math.round(feature.properties.pinta_ala) + " m2";
     
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
-    if (window.radius == null) {
+    if (radius == null) {
       layer.bindPopup(content, popupOptions);
     } else {
       //ei siirryta koskaan else ehtoon...
@@ -325,16 +325,16 @@ function init() {
   
   
   none.addEventListener('change', function() {
-    window.radius = null;
+    radius = null;
   });
   	
   //Bufferikoon 150m eventlisteneri
   box_150.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      window.radius = 150 * 0.000621371192;
+      radius = 150 * 0.000621371192;
     } else {
-      window.radius = null;
+      radius = null;
     }
   });
  
@@ -342,9 +342,9 @@ function init() {
   box_300.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      window.radius = 300 * 0.000621371192;
+      radius = 300 * 0.000621371192;
     } else {
-      window.radius = null;
+      radius = null;
     }
   });
 
