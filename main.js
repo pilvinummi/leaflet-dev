@@ -150,18 +150,17 @@ function init() {
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia (jos laittaa !=, niin silloin
     //popupia ei saa luotua missaan tilanteessa
     popupOptions = {maxWidth: 200};
+    layer.unbindPopup();
     
     //layer.on('click', function() {
       if (window.radius == null) {
-        feature.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
+        layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
           "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
           "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
           "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
           "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
           ,popupOptions);
-      } //else {
-    //	layer.unbindPopup();
-     // }
+      }
     //});
     
     layer.on({
