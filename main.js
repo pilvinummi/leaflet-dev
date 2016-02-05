@@ -146,12 +146,10 @@ function init() {
   
   //Taman tarkoituksena on mahdollistaa popupin ja muiden funktioiden toimimisen viheralueet-tasoilla
   function onEachFeature_viheralueet(feature, layer) {
-  	
-    rad = window.radius
     
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia (jos laittaa !=, niin silloin
     //popupia ei saa luotua missaan tilanteessa
-    if (rad == null) {
+    if (radius == null) {
       popupOptions = {maxWidth: 200};
       layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
         "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
@@ -331,9 +329,9 @@ function init() {
   box_150.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      radius = 150 * 0.000621371192;
+      this.radius = 150 * 0.000621371192;
     } else {
-      radius = null;
+      this.radius = null;
     }
   });
  
@@ -341,9 +339,9 @@ function init() {
   box_300.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      radius = 300 * 0.000621371192;
+      this.radius = 300 * 0.000621371192;
     } else {
-      radius = null;
+      this.radius = null;
     }
   });
 
