@@ -149,6 +149,7 @@ function init() {
     
     popupOptions = {maxWidth: 200};
     
+    layer.on('click', function() {
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
     if (window.radius == null) {
       layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
@@ -160,7 +161,8 @@ function init() {
     } else {
       layer.unbindPopup();
     }
-
+    });
+    
     layer.on({
       mousemove: mousemove,
       mouseout: mouseout, 
