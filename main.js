@@ -148,15 +148,15 @@ function init() {
   function onEachFeature_viheralueet(feature, layer) {
     
     popupOptions = {maxWidth: 200};
-    var content = {"<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
-        "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
-        "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
-        "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
-        "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala};
     
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
     if (window.radius == null) {
-      layer.bindPopup(content, popupOptions);
+      layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
+        "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
+        "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
+        "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
+        "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
+        , popupOptions);
     } else {
       layer.unbindPopup();
     }
