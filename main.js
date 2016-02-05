@@ -152,7 +152,7 @@ function init() {
         "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
         "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
         "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
-        "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala;
+        "<br><b>Pinta-ala: </b> " + Math.round(feature.properties.pinta_ala) + "m2";
     
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
     if (window.radius == null) {
