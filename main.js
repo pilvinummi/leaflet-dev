@@ -266,7 +266,7 @@ function init() {
     var layer = e.target;
    
     if (radius != null) {
-      layer.unbindPopup(content);	
+      layer.unbindPopup();
     
       var layer_geojson = layer.toGeoJSON();
       var buffered = turf.buffer(layer_geojson, radius, 'miles');
