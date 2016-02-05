@@ -3,7 +3,7 @@ function init() {
   
   //Laitetaan kaikki muuttujat tahan...
   document.getElementById("none").checked = true;
-  var container = document.getElementById('information');
+  var information = document.getElementById('information');
   var removeButton = document.getElementById('remove');
   var resetButton = document.getElementById('reset');
   
@@ -206,8 +206,8 @@ function init() {
           onEachFeature: function (feature, layer) {
             
             layer.on('click', function() {
-              container.innerHTML = '';
-              container.innerHTML = ("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
+              information.innerHTML = '';
+              information.innerHTML = ("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
               "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala + " m2" +
               "<br><b>Asukasmäärä: </b> " + feature.properties.he_vakiy +
               "<br><b>Asukastiheys: </b> " + Math.round(feature.properties.he_vakiy / (feature.properties.pinta_ala / 1000000)) + " as/k-m2" +
@@ -227,7 +227,7 @@ function init() {
   
   //Tyhjentaa containerin, kun klikataan muuta kuin kuin kohdetta
   map.on('click', function(e) {
-  	container.innerHTML = '';
+  	information.innerHTML = '';
   });
   
   
