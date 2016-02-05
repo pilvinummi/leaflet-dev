@@ -24,16 +24,16 @@ function init() {
  
   
   var southWest = L.latLng(60.082097, 24.786873),
-    northEast = L.latLng(60.330814, 25.277824),
+    northEast = L.latLng(60.327415, 25.322456),
     bounds = L.latLngBounds(southWest, northEast);
   
   
   var map = L.map('map', {
     //center: new L.LatLng(60.192871, 25.049858), //(60.1708, 24.9375),
-    zoom: 12,
+    //zoom: 12,
     maxBounds: bounds,
     maxZoom: 18,
-    minZoom: 10
+    minZoom: 11
   });
   
   //Fit to bounds
