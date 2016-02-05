@@ -148,8 +148,7 @@ function init() {
   function onEachFeature_viheralueet(feature, layer) {
     
     popupOptions = {maxWidth: 200, closeOnClick: true};
-    layer.bindPopup("jee", popupOptions);
-    /*
+    
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
     if (window.radius == null) {
       layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
@@ -159,7 +158,7 @@ function init() {
         "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
         , popupOptions);
     }
-    */
+    
     layer.on({
       mousemove: mousemove,
       mouseout: mouseout, 
