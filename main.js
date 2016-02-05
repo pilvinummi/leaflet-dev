@@ -149,20 +149,17 @@ function init() {
     
     popupOptions = {maxWidth: 200};
     
-    layer.on('click', function() {
-    	//layer.unbindPopup();
+    layer.unbindPopup();
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
-    //if (window.radius == null) {
+    if (window.radius == null) {
       layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
         "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
         "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
         "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
         "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
         , popupOptions);
-    //} else {
-     // layer.unbindPopup();
-    //}
-    });
+    }
+ 
     
     layer.on({
       mousemove: mousemove,
@@ -208,7 +205,7 @@ function init() {
             
             layer.on('click', function() {
               information.innerHTML = '';
-              information.innerHTML = ("<b>Alueen nimi: </b> " + feature.properties.nimi + //bindPopup
+              information.innerHTML = ("<b>Alueen nimi: </b> " + feature.properties.nimi +
               "<br><b>Pinta-ala: </b> " + Math.round(feature.properties.pinta_ala) + " m2" +
               "<br><b>Asukasmäärä: </b> " + feature.properties.he_vakiy +
               "<br><b>Asukastiheys: </b> " + Math.round(feature.properties.he_vakiy / (feature.properties.pinta_ala / 1000000)) + " as/k-m2" +
