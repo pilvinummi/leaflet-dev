@@ -147,7 +147,7 @@ function init() {
   //Taman tarkoituksena on mahdollistaa popupin ja muiden funktioiden toimimisen viheralueet-tasoilla
   function onEachFeature_viheralueet(feature, layer) {
     
-    popupOptions = {maxWidth: 200};
+    popupOptions = {maxWidth: 200, closeOnClick: true};
     layer.bindPopup("jee", popupOptions);
     /*
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
