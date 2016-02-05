@@ -230,6 +230,7 @@ function init() {
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
   function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
+    map.setZoom(14);
   }
 
 
