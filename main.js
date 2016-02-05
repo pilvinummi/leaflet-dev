@@ -23,8 +23,8 @@ function init() {
   var radius;
  
   
-  var southWest = L.latLng(60.095451, 24.823265),
-    northEast = L.latLng(60.305797, 25.258384),
+  var southWest = L.latLng(60.082097, 24.786873),
+    northEast = L.latLng(60.322220, 25.265722),
     bounds = L.latLngBounds(southWest, northEast);
   
   
@@ -32,8 +32,8 @@ function init() {
     //center: new L.LatLng(60.192871, 25.049858), //(60.1708, 24.9375),
     //zoom: 12,
     maxBounds: bounds,
-    minZoom: 11,
-    maxZoom: 18
+    maxZoom: 18,
+    minZoom: 11
   });
   
   //Fit to bounds
