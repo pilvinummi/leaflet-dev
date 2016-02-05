@@ -20,7 +20,7 @@ function init() {
   //Muuttujat filterointiin
   var filter;
   var fillcolor;
-  var radius = null;
+  var radius;
  
   
   var southWest = L.latLng(60.082097, 24.786873);
@@ -332,9 +332,9 @@ function init() {
   box_150.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      radius = 150 * 0.000621371192;
+      radius = 150 * 0.000621371192
     } else {
-      radius = null;
+      radius = null
     }
   });
  
@@ -342,9 +342,9 @@ function init() {
   box_300.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      radius = 300 * 0.000621371192;
+      radius = 300 * 0.000621371192
     } else {
-      radius = null;
+      radius = null
     }
   });
 
