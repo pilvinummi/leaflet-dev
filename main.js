@@ -147,7 +147,7 @@ function init() {
   //Taman tarkoituksena on mahdollistaa popupin ja muiden funktioiden toimimisen viheralueet-tasoilla
   function onEachFeature_viheralueet(feature, layer) {
   	
-    var radius = null;
+    var radius = 1
     
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia (jos laittaa !=, niin silloin
     //popupia ei saa luotua missaan tilanteessa
