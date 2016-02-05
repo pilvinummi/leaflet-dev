@@ -159,7 +159,7 @@ function init() {
       layer.bindPopup(content, popupOptions);
     } 
     
-    if (window.radius != null {
+    else if (window.radius != null) {
       //ei siirryta koskaan else ehtoon...
       alert("toimi ny");
       layer.unbindPopup();
