@@ -230,7 +230,7 @@ function init() {
   //Tasojen funktioita: kohteeseen zoomaus ja kohteen korostus
   function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
-    map.setZoom(14);
+    //map.setZoom(14);
   }
 
 
@@ -264,6 +264,10 @@ function init() {
   //Funktio bufferin luonnista, joka luodaan viheralueetta klikatessa
   function addBuffer(e) {
     var layer = e.target;
+    
+    if (radius != null) {
+    	layer.unbindPopup();
+    }
     
     if (radius != null) {
       var layer_geojson = layer.toGeoJSON();
