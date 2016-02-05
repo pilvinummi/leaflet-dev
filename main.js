@@ -157,7 +157,7 @@ function init() {
         "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
         "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
         ,popupOptions);
-    } else {
+    } else if (window.radius != null) {
     	layer.unbindPopup();
     }
     
