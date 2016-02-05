@@ -156,9 +156,11 @@ function init() {
     
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
     if (window.radius == null) {
+      alert("wow");
       layer.bindPopup(content, popupOptions);
     } else {
-      feature.unbindPopup();
+      alert("toimi ny");
+      layer.unbindPopup();
     }
     
     layer.on({
