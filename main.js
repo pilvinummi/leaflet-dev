@@ -22,12 +22,14 @@ function init() {
   var fillcolor;
   var radius;
  
+  /*
   var southWest = L.latLng(60.095451, 24.823265),
     northEast = L.latLng(60.305797, 25.258384),
     bounds = L.latLngBounds(southWest, northEast);
- 
+  */
+  
   var map = L.map('map', {
-    center: new L.LatLng(60.200038, 25.005913), //(60.1708, 24.9375),
+    center: new L.LatLng(60.192871, 25.049858), //(60.1708, 24.9375),
     zoom: 12,
     minZoom: 10,
     maxZoom: 18
