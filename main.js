@@ -164,7 +164,7 @@ function init() {
     layer.on({
       mousemove: mousemove,
       mouseout: mouseout, 
-      click:
+      click: addBuffer
     });
   }
 
