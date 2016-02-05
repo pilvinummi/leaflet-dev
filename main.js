@@ -153,7 +153,7 @@ function init() {
     
     //layer.on('click', function() {
       if (window.radius == null) {
-        layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
+        feature.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
           "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
           "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
           "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
