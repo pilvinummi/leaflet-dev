@@ -29,8 +29,8 @@ function init() {
   */
   
   var map = L.map('map', {
-    //center: new L.LatLng(60.192871, 25.049858), //(60.1708, 24.9375),
-    //zoom: 12,
+    center: new L.LatLng(60.192871, 25.049858), //(60.1708, 24.9375),
+    zoom: 12,
     //maxBounds: bounds,
     maxZoom: 18,
     minZoom: 11
