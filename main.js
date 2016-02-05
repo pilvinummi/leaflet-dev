@@ -263,16 +263,10 @@ function init() {
   //Funktio bufferin luonnista, joka luodaan viheralueetta klikatessa
   function addBuffer(e) {
     var layer = e.target;
-    var feature = e.target;
     
     if (radius == null) {
       popupOptions = {maxWidth: 200};
-      layer.bindPopup("<b>Viheralueen tunnus: </b> " + feature.properties.viheralue_id +
-        "<br><b>Nimi: </b> " + feature.properties.puiston_nimi +
-        "<br><b>Käyttötarkoitus: </b> " + feature.properties.kayttotarkoitus +
-        "<br><b>Käyttötarkoitus id: </b> " + feature.properties.kayttotarkoitus_id +
-        "<br><b>Pinta-ala: </b> " + feature.properties.pinta_ala
-        , popupOptions);
+      layer.bindPopup("JEES", popupOptions);
     }
     
     if (radius != null) {
