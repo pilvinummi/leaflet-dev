@@ -29,7 +29,7 @@ function init() {
   var map = L.map('map', {
     center: new L.LatLng(60.1708, 24.9375),
     zoom: 12,
-    minZoom: 11,
+    minZoom: 13,
     maxZoom: 18,
     maxBounds: bounds
   });
