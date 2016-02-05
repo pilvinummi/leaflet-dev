@@ -24,7 +24,7 @@ function init() {
  
   
   var southWest = L.latLng(60.082097, 24.786873),
-    northEast = L.latLng(60.322220, 25.265722),
+    northEast = L.latLng(60.330814, 25.277824),
     bounds = L.latLngBounds(southWest, northEast);
   
   
@@ -33,7 +33,7 @@ function init() {
     //zoom: 12,
     maxBounds: bounds,
     maxZoom: 18,
-    minZoom: 11
+    minZoom: 12
   });
   
   //Fit to bounds
