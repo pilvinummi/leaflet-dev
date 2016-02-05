@@ -30,8 +30,8 @@ function init() {
     center: new L.LatLng(60.1708, 24.9375),
     zoom: 12,
     minZoom: 13,
-    maxZoom: 18,
-    maxBounds: bounds
+    maxZoom: 18
+    //maxBounds: bounds
   });
   	
   //Scale
