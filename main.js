@@ -20,7 +20,7 @@ function init() {
   //Muuttujat filterointiin
   var filter;
   var fillcolor;
-  var radius;
+  var window.radius;
  
   
   var southWest = L.latLng(60.082097, 24.786873);
@@ -157,9 +157,7 @@ function init() {
     //Jos bufferin sade on asetettu null, niin ei pitaisi pystya luomaan popupia
     if (window.radius == null) {
       layer.bindPopup(content, popupOptions);
-    } 
-    
-    else if (window.radius != null) {
+    } else {
       //ei siirryta koskaan else ehtoon...
       alert("toimi ny");
       layer.unbindPopup();
@@ -327,16 +325,16 @@ function init() {
   
   
   none.addEventListener('change', function() {
-    radius = null;
+    window.radius = null;
   });
   	
   //Bufferikoon 150m eventlisteneri
   box_150.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      radius = 150 * 0.000621371192;
+      window.radius = 150 * 0.000621371192;
     } else {
-      radius = null;
+      window.radius = null;
     }
   });
  
@@ -344,9 +342,9 @@ function init() {
   box_300.addEventListener('change', function() {
     var checked = this.checked;
     if (checked) {
-      radius = 300 * 0.000621371192;
+      window.radius = 300 * 0.000621371192;
     } else {
-      radius = null;
+      window.radius = null;
     }
   });
 
