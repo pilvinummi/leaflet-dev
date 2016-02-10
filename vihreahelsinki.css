@@ -67,8 +67,10 @@ html, body {
       
       .ScrollStyle label{
       	font-weight:normal;
+      	font-size: 13px;
       	display: block;
       	float: left;
+      	clear:both;
       }
       
       .info {
