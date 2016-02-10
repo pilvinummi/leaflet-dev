@@ -111,12 +111,14 @@ html, body {
 /* Tasojen värit */    
 	#label {
 		float:left;
+		margin:0;
 		clear:right;
 	}
 	#ulkoilumetsat {
 		float:left;
 		width: 20px; 
-		height: 20px; 
+		height: 20px;
+		margin:0;
 		background: #006666; 
 		-moz-border-radius: 10px; 
 		-webkit-border-radius: 10px; 
