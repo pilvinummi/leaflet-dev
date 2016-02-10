@@ -108,7 +108,11 @@ html, body {
         opacity: 0.7;
       }
       
-/* Tasojen värit */      
+/* Tasojen värit */    
+	#label {
+		float:left;
+		clear:right;
+	}
 	#ulkoilumetsat {
 		float:left;
 		width: 20px; 
@@ -117,7 +121,7 @@ html, body {
 		-moz-border-radius: 10px; 
 		-webkit-border-radius: 10px; 
 		border-radius: 10px; 
-		clear:none;
+		clear:left;
 	} 
 	
 	#kesamajat {
