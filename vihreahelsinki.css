@@ -112,6 +112,7 @@ html, body {
 	#label {
 		float:left;
 		margin:0;
+		margin-bottom:3px;
 		font-size:13px;
 		clear:right;
 	}
@@ -130,11 +131,14 @@ html, body {
 	
 	#kesamajat {
 		float:left;
-		width: 20px; 
-		height: 20px; 
+		width: 16px; 
+		height: 16px;
+		margin:0;
+		margin-right:4px;
 		background: #3333cc; 
-		-moz-border-radius: 10px; 
-		-webkit-border-radius: 10px; 
-		border-radius: 10px; 
-		clear:none;
-	} 	
+		-moz-border-radius: 8px; 
+		-webkit-border-radius: 8px; 
+		border-radius: 8px; 
+		clear:left;
+	} 
+	
