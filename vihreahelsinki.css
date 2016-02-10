@@ -63,6 +63,7 @@ html, body {
       	float: left;
 	max-height: 250px;
 	overflow-y: auto; /*scroll*/
+	clear:both;
       }
       
       .ScrollStyle label{
