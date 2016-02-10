@@ -97,7 +97,7 @@ function init() {
             kaytto = feature.properties.kayttotarkoitus;
       
             if ( kaytto.indexOf("semakaavoitettu") > -1) fillColor = "#339966";
-            else if ( kaytto == "Yleiskaavan viheralue" ) fillColor = "#00cc99";
+            else if ( kaytto.indexOf("Yleiskaavan viheralue") > -1 ) fillColor = "#00cc99";
             else if ( kaytto == "Ulkoilumetsä" ) fillColor = "#006666";
             
             
