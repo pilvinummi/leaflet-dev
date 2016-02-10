@@ -98,7 +98,7 @@ function init() {
       
             if ( kaytto.indexOf("semakaavoitettu") > -1) fillColor = "#339966";
             else if ( kaytto == "Yleiskaavan viheralue" ) fillColor = "#663399";
-            else if ( kaytto == "Ulkoilumetsä" ) fillColor = "#000066";
+            else if ( kaytto == "Ulkoilumetsä" ) fillColor = "#006666";
             else if ( kaytto == "Kartano- ja huvila-alue" ) fillColor = "#990099";
             else if ( kaytto == "Kesämaja-alue" || kaytto == "Siirtolapuutarha" || kaytto == "Viljelypalsta" || kaytto == "Viljelypalsta-alue") fillColor = "#006699";
             else if ( kaytto == "Koira-aitaus" ) fillColor = "#cc0099";
