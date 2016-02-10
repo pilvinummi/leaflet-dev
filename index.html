@@ -99,15 +99,16 @@
 	<label><input type="checkbox" id="yleiskaava" value="15" name="layers[]"/> Yleiskaavan viheralueet</label><br/>
 	<label><input type="checkbox" id="muut" value="16" name="layers[]"/> Muut viheralueet</label><br/>
 	</div>
+	<button id="reset" class="btn btn-primary">Poista valinta</button>
 	
-    	<p>
- 	
- 	<label><input type="radio" id="none" value="1" name="check[]"/> None</label>
-    	<label><input type="radio" id="box_150" value="1" name="check[]"/> 150m bufferi</label>
- 	<label><input type="radio" id="box_300" value="1" name="check[]"/> 300m bufferi</label>
- 	
-    	<button id="remove" class="btn btn-primary">Poista bufferit</button>
-    	<button id="reset" class="btn btn-primary">Poista tasot</button>
+    	
+ 	<div>
+    	<label><input type="radio" id="box_150" value="1" name="check[]"/> 150m puskuri</label>
+ 	<label><input type="radio" id="box_300" value="1" name="check[]"/> 300m puskuri</label>
+ 	<label><input type="radio" id="none" value="1" name="check[]"/> Ei puskuria</label>
+ 	</div>
+    	<button id="remove" class="btn btn-primary">Poista puskurit</button>
+    	
     	
     	<h2>Kartta-aineistot:</h2>
 	
