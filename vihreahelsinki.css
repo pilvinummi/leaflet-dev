@@ -117,6 +117,14 @@ html, body {
 		-webkit-border-radius: 10px; 
 		border-radius: 10px; 
 		clear:none;
-		
-	} /* Cleaner, but slightly less support: use "50%" as value */
+	} 
 	
+	#kesamaja {
+		width: 20px; 
+		height: 20px; 
+		background: #3333cc; 
+		-moz-border-radius: 10px; 
+		-webkit-border-radius: 10px; 
+		border-radius: 10px; 
+		clear:none;
+	} 	
