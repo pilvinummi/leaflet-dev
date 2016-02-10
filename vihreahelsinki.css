@@ -128,6 +128,18 @@ html, body {
 		border-radius: 8px; 
 		clear:left;
 	} 
+	#kartanot {
+		float:left;
+		width: 16px; 
+		height: 16px;
+		margin:0;
+		margin-right:4px;
+		background: #006699; 
+		-moz-border-radius: 8px; 
+		-webkit-border-radius: 8px; 
+		border-radius: 8px; 
+		clear:left;
+	} 
 	
 	#kesamajat {
 		float:left;
