@@ -112,7 +112,7 @@ html, body {
 	#label {
 		float:left;
 		margin:0;
-		margin-bottom:3px;
+		margin-bottom:0px;
 		font-size:13px;
 		clear:right;
 	}
@@ -160,7 +160,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: ##663399; 
+		background: #663399; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
