@@ -99,15 +99,19 @@ function init() {
             if ( kaytto.indexOf("semakaavoitettu") > -1) fillColor = "#339966";
             else if ( kaytto == "Yleiskaavan viheralue" ) fillColor = "#00cc99";
             else if ( kaytto == "Ulkoilumetsä" ) fillColor = "#006666";
-            else if ( kaytto == "Kartano- ja huvila-alue" ) fillColor = "#990099";
-            else if ( kaytto == "Kesämaja-alue" || kaytto == "Siirtolapuutarha" || kaytto == "Viljelypalsta" || kaytto == "Viljelypalsta-alue") fillColor = "#006699";
-            else if ( kaytto == "Koira-aitaus" ) fillColor = "#cc0099";
-            else if ( kaytto == "Leikkipaikka" || kaytto == "Leikkipuisto" ) fillColor = "#339999";
-            else if ( kaytto == "Luonnonsuojelualue" ) fillColor = "#00cc99";
-            else if ( kaytto.indexOf("luonnonsuojelualue") > -1 ) fillColor = "#6666cc";
-            else if ( kaytto == "Uimaranta-alue" || kaytto == "Venesatama / Venevalkama" ) fillColor = "#00cccc";
-            else if ( kaytto.indexOf("Haudat") > -1 ) fillColor = "#006666";
-            else if ( kaytto == "Muut viheralueet" ) fillColor = "#000066";
+            
+            
+            else if ( kaytto == "Kesämaja-alue" || kaytto == "Siirtolapuutarha" || kaytto == "Viljelypalsta" || kaytto == "Viljelypalsta-alue") fillColor = "#3333cc";
+            else if ( kaytto == "Koira-aitaus" ) fillColor = "#663399";
+            else if ( kaytto == "Leikkipaikka" || kaytto == "Leikkipuisto" ) fillColor = "#990099";
+            else if ( kaytto == "Uimaranta-alue" || kaytto == "Venesatama / Venevalkama" ) fillColor = "#0099cc";
+            
+            else if ( kaytto == "Kartano- ja huvila-alue" ) fillColor = "#006699";
+            else if ( kaytto == "Luonnonsuojelualue" ) fillColor = "#339999";
+            else if ( kaytto.indexOf("luonnonsuojelualue") > -1 ) fillColor = "#339999";
+            else if ( kaytto.indexOf("Haudat") > -1 ) fillColor = "#000066";
+            
+            else if ( kaytto == "Muut viheralueet" ) fillColor = "#999999";
             else fillColor = "#999";  // no data
 		      
           //Muu toimiluokka
