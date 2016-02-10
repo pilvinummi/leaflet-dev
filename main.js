@@ -101,7 +101,7 @@ function init() {
             else if ( kaytto == "Ulkoilumetsä" ) fillColor = "#000066";
             else if ( kaytto == "Kartano- ja huvila-alue" ) fillColor = "#990099";
             else if ( kaytto == "Kesämaja-alue" || kaytto == "Siirtolapuutarha" || kaytto == "Viljelypalsta" || kaytto == "Viljelypalsta-alue") fillColor = "#006699";
-            else if ( kaytto == "Koira-aitaus" ) fillColor = "#00cc99";
+            else if ( kaytto == "Koira-aitaus" ) fillColor = "#cc0099";
             else if ( kaytto == "Leikkipaikka" || kaytto == "Leikkipuisto" ) fillColor = "#339999";
             else if ( kaytto == "Luonnonsuojelualue" ) fillColor = "#00cc99";
             else if ( kaytto.indexOf("luonnonsuojelualue") > -1 ) fillColor = "#6666cc";
