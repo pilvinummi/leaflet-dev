@@ -116,13 +116,14 @@ html, body {
 	}
 	#ulkoilumetsat {
 		float:left;
-		width: 20px; 
-		height: 20px;
+		width: 16px; 
+		height: 16px;
 		margin:0;
+		margin-right:4px;
 		background: #006666; 
-		-moz-border-radius: 10px; 
-		-webkit-border-radius: 10px; 
-		border-radius: 10px; 
+		-moz-border-radius: 8px; 
+		-webkit-border-radius: 8px; 
+		border-radius: 8px; 
 		clear:left;
 	} 
 	
