@@ -61,18 +61,25 @@ html, body {
       {
       	left: 0px;
       	float: left;
-	max-height: 250px;
-	overflow-y: auto; /*scroll*/
+	/*max-height: 250px;*/
+	/*overflow-y: auto; /*scroll*/
 	clear:both;
       }
       
-      .ScrollStyle label{
+      .bufferi{
+      	left: 0px;
+      	float: left;
+	clear:both;     	
+      }      
+      
+      .ScrollStyle label, .bufferi label{
       	font-weight:normal;
       	font-size: 13px;
       	display: block;
       	float: left;
       	clear:both;
       }
+
       
       .info {
 	padding: 6px 8px;
