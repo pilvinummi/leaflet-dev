@@ -65,6 +65,11 @@ html, body {
 	overflow-y: auto; /*scroll*/
       }
       
+      .ScrollStyle label{
+      	font-weight:normal;
+      	
+      }
+      
       .info {
 	padding: 6px 8px;
 	font: 14px/16px Arial, Helvetica, sans-serif;
