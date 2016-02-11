@@ -122,7 +122,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #006666; 
+		background: #669966; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
@@ -134,7 +134,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #006699; 
+		background: #996699; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
@@ -147,12 +147,24 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #3333cc; 
+		background: #666699; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
 		clear:left;
 	} 
+	#palstat {
+		float:left;
+		width: 16px; 
+		height: 16px;
+		margin:0;
+		margin-right:4px;
+		background: #333366; 
+		-moz-border-radius: 8px; 
+		-webkit-border-radius: 8px; 
+		border-radius: 8px; 
+		clear:left;
+	} 	
 	
 	#koirat {
 		float:left;
@@ -160,7 +172,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #663399; 
+		background: #333399; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
@@ -173,7 +185,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #990099; 
+		background: #663399; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
@@ -185,7 +197,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #339999; 
+		background: #336699; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
@@ -197,7 +209,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #0099cc; 
+		background: #66cccc; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
@@ -209,7 +221,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #000066; 
+		background: #666666; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
@@ -221,7 +233,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #339966; 
+		background: #336666; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
@@ -233,7 +245,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #00cc99; 
+		background: #336666; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
@@ -245,7 +257,7 @@ html, body {
 		height: 16px;
 		margin:0;
 		margin-right:4px;
-		background: #999999; 
+		background: #336666; 
 		-moz-border-radius: 8px; 
 		-webkit-border-radius: 8px; 
 		border-radius: 8px; 
