@@ -113,7 +113,7 @@ function init() {
             else if ( kaytto.indexOf("Haudat") > -1 ) fillColor = "#666666";
             
             else if ( kaytto == "Muut viheralueet" ) fillColor = "#336666";
-            else fillColor = "#999";  // no data
+            else fillColor = "#336666";  // no data
 		      
           //Muu toimiluokka
           //Yleiskaavan viheralue / luonnonsuojelualue
