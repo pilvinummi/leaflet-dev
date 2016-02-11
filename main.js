@@ -103,7 +103,7 @@ function init() {
             
             else if ( kaytto == "Kesämaja-alue" || kaytto == "Siirtolapuutarha") fillColor = "#666699";
             else if ( kaytto == "Viljelypalsta" || kaytto == "Viljelypalsta-alue") fillColor = "#333366";            
-            else if ( kaytto == "Koira-aitaus" ) fillColor = "#333399";
+            else if ( kaytto == "Koira-aitaus" ) fillColor = "#666633";
             else if ( kaytto == "Leikkipaikka" || kaytto == "Leikkipuisto" ) fillColor = "#663399";
             else if ( kaytto == "Uimaranta-alue" || kaytto == "Venesatama / Venevalkama" ) fillColor = "#66cccc";
             
