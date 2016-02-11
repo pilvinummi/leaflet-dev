@@ -96,22 +96,23 @@ function init() {
             var fillColor, 
             kaytto = feature.properties.kayttotarkoitus;
       
-            if ( kaytto.indexOf("semakaavoitettu") > -1) fillColor = "#339966";
-            else if ( kaytto.indexOf("Yleiskaavan viheralue") > -1 ) fillColor = "#00cc99";
-            else if ( kaytto == "Ulkoilumetsä" ) fillColor = "#006666";
+            if ( kaytto.indexOf("semakaavoitettu") > -1) fillColor = "#336666";
+            else if ( kaytto.indexOf("Yleiskaavan viheralue") > -1 ) fillColor = "#336666";
+            else if ( kaytto == "Ulkoilumetsä" ) fillColor = "#669966";
             
             
-            else if ( kaytto == "Kesämaja-alue" || kaytto == "Siirtolapuutarha" || kaytto == "Viljelypalsta" || kaytto == "Viljelypalsta-alue") fillColor = "#3333cc";
-            else if ( kaytto == "Koira-aitaus" ) fillColor = "#663399";
-            else if ( kaytto == "Leikkipaikka" || kaytto == "Leikkipuisto" ) fillColor = "#990099";
-            else if ( kaytto == "Uimaranta-alue" || kaytto == "Venesatama / Venevalkama" ) fillColor = "#0099cc";
+            else if ( kaytto == "Kesämaja-alue" || kaytto == "Siirtolapuutarha") fillColor = "#666699";
+            else if ( kaytto == "Viljelypalsta" || kaytto == "Viljelypalsta-alue") fillColor = "#333366";            
+            else if ( kaytto == "Koira-aitaus" ) fillColor = "#333399";
+            else if ( kaytto == "Leikkipaikka" || kaytto == "Leikkipuisto" ) fillColor = "#663399";
+            else if ( kaytto == "Uimaranta-alue" || kaytto == "Venesatama / Venevalkama" ) fillColor = "#66cccc";
             
-            else if ( kaytto == "Kartano- ja huvila-alue" ) fillColor = "#006699";
-            else if ( kaytto == "Luonnonsuojelualue" ) fillColor = "#339999";
-            else if ( kaytto.indexOf("luonnonsuojelualue") > -1 ) fillColor = "#339999";
-            else if ( kaytto.indexOf("Haudat") > -1 ) fillColor = "#000066";
+            else if ( kaytto == "Kartano- ja huvila-alue" ) fillColor = "#996699";
+            else if ( kaytto == "Luonnonsuojelualue" ) fillColor = "#336699";
+            else if ( kaytto.indexOf("luonnonsuojelualue") > -1 ) fillColor = "#336699";
+            else if ( kaytto.indexOf("Haudat") > -1 ) fillColor = "#666666";
             
-            else if ( kaytto == "Muut viheralueet" ) fillColor = "#999999";
+            else if ( kaytto == "Muut viheralueet" ) fillColor = "#336666";
             else fillColor = "#999";  // no data
 		      
           //Muu toimiluokka
